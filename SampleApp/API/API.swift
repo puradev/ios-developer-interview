@@ -11,7 +11,8 @@ class API: NSObject {
     static let shared = API()
     let session = URLSession.shared
     
-    static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    static let baseSearchUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" // Not need for now, as the baseThesaurusUrl call gives us all the properties we are currently using
+    static let baseThesaurusUrl = "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
     
     func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
         guard !query.isEmpty else {
@@ -19,19 +20,18 @@ class API: NSObject {
             return
         }
         
-        guard query.count > 2 else {
-            completion(.failure(.tooShort(query)))
+        guard query.count > 1 else { // Single character entries we can skip, but there are plenty of two-letter words we want to allow
+            completion(.failure(.tooShort))
             return
         }
         
-        
-        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
+        let requestURL = URLBuilder(baseURL: API.baseThesaurusUrl, word: query.lowercased()).thesaurusRequestURL
         
         guard let url = URL(string: requestURL) else {
             completion(.failure(.badURL))
             return
         }
-        
+
         let request = URLRequest(url: url)
         
         print("Fetching from: ", request.url?.absoluteString ?? "")
@@ -47,7 +47,6 @@ class API: NSObject {
             }
             completion(.success(data))
             
-
         }.resume()
         
     }

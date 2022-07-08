@@ -11,28 +11,37 @@ import Foundation
 struct Word: Codable {
     var text: String
     var definitions: [String]
+    var stems: [String]
+    var syns: [Array<String>]
+    let fl: String
     
+    func definitionString() -> String {
+        // TODO: Think about seperating `syns` out of this `definitions` string
+        // with this change, we would want to create a new view in the WordTableViewCell to assign the seperated `syns` string
+        var definitionString = ""
+        for (i, def) in self.definitions.enumerated() {
+            let newLineString = (i == self.definitions.endIndex - 1) ? "" : "\n" // if we're on the last definition, we don't include newlines, to save space per each cell.
+            definitionString += "\u{2022} \(def).\(newLineString)"
+        }
+        if !self.syns.isEmpty {
+            definitionString += "\n\n"
+            definitionString += "synonyms: "
+            for arr in self.syns {
+                for (i, syn) in arr.enumerated() {
+                    if i <= 5 {
+                        definitionString += "\(syn), "
+                    }
+                }
+            }
+        }
+        return definitionString
+    }
     
-//    static func parseData(_ data: Data) -> Word {
-//        var word: Word = Word()
-//
-//        do {
-//            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-//
-//            for dict in json {
-//                if let meta = dict["meta"] as? [String: Any] {
-//                    if let id: String = meta["id"] as? String{
-//                        word.text = id
-//                    }
-//                }
-//                if let definitions = dict["shortdef"] as? [String] {
-//                    word.definitions = definitions
-//                }
-//            }
-//
-//        } catch {
-//            print("PARSING ERROR: ", error.localizedDescription)
-//        }
-//        return word
-//    }
+    func taglineString() -> String {
+        var taglineString = ""
+        for stem in self.stems {
+            taglineString += "\(stem) \\ "
+        }
+        return taglineString
+    }
 }
