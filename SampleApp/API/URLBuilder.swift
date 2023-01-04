@@ -11,9 +11,10 @@ import Foundation
 struct URLBuilder {
     var baseURL: String
     var word: String
+    var thesaurus: Bool
 
     var requestURL: String {
-        let url = baseURL + word + "?key=" + Tokens.apiKeyDict
+        let url = baseURL + word + "?key=" + (thesaurus ? Tokens.apiKeyThes : Tokens.apiKeyDict)
         return url
     }
 }

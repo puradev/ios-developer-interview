@@ -11,9 +11,11 @@ class API: NSObject {
     static let shared = API()
     let session = URLSession.shared
     
-    static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/%@/json/"
+    static let collegiatePath = "collegiate"
+    static let thesaurusPath = "thesaurus"
     
-    func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
+    func fetchWord(query: String, thesaurus: Bool, _ completion: @escaping (Result<Data, APIError>) -> Void) {
         guard !query.isEmpty else {
             completion(.failure(.emptyQuery))
             return
@@ -24,8 +26,7 @@ class API: NSObject {
             return
         }
         
-        
-        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
+        let requestURL = URLBuilder(baseURL: String(format: API.baseUrl, thesaurus ? API.thesaurusPath : API.collegiatePath), word: query.lowercased(), thesaurus: thesaurus).requestURL
         
         guard let url = URL(string: requestURL) else {
             completion(.failure(.badURL))
@@ -46,10 +47,7 @@ class API: NSObject {
                 return
             }
             completion(.success(data))
-            
-
         }.resume()
-        
     }
     
 }
