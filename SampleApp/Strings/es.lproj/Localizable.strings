@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  SampleApp
+
+  Created by MacBook on 27/01/23.
+  
+*/
+
+"offLine" = "Estas desconectado";
+
+"connectButton" = "Conectar";
+
+"searchError" = "Error en la busqueda, intenta de nuevo";
+
+"tooShort" = "Palabra muy corta";
+
+"notFound" = "Resultado no encontrado";
+
+"search" = "Buscar";

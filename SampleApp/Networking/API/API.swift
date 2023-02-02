@@ -18,12 +18,11 @@ class API: NSObject {
             completion(.failure(.emptyQuery))
             return
         }
-        
+
         guard query.count > 2 else {
             completion(.failure(.tooShort(query)))
             return
         }
-        
         
         let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
         
@@ -33,8 +32,6 @@ class API: NSObject {
         }
         
         let request = URLRequest(url: url)
-        
-        print("Fetching from: ", request.url?.absoluteString ?? "")
         session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(.custom(error.localizedDescription)))
@@ -45,11 +42,14 @@ class API: NSObject {
                 completion(.failure(.noData))
                 return
             }
+            
+            guard let _ = WordResponse.parseData(data) else {
+                completion(.failure(.notFound))
+                return
+            }
+            
             completion(.success(data))
             
-
         }.resume()
-        
     }
-    
 }

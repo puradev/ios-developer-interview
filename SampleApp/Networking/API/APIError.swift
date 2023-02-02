@@ -14,4 +14,6 @@ enum APIError: Error {
     case noData
     case emptyQuery
     case tooShort(String)
+    case notFound
+    case noError
 }
