@@ -20,12 +20,12 @@ class API: NSObject {
         }
         
         guard query.count > 2 else {
-            completion(.failure(.tooShort(query)))
+            completion(.failure(.tooShort))
             return
         }
         
         
-        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
+        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased(), token: Tokens.apiKeyDict).requestURL
         
         guard let url = URL(string: requestURL) else {
             completion(.failure(.badURL))
@@ -37,7 +37,7 @@ class API: NSObject {
         print("Fetching from: ", request.url?.absoluteString ?? "")
         session.dataTask(with: request) { data, response, error in
             if let error = error {
-                completion(.failure(.custom(error.localizedDescription)))
+                completion(.failure(.custom))
                 return
             }
             

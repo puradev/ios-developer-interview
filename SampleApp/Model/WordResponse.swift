@@ -8,7 +8,8 @@
 import Foundation
 
 
-struct WordResponse: Codable {
+struct WordResponse: Identifiable, Codable {
+    var id: Int?
     let meta: Meta
     let shortdef: [String]
     
