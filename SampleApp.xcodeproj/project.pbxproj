@@ -28,7 +28,6 @@
 		72B428FC29B181F50049C098 /* PuraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B428FB29B181F50049C098 /* PuraButton.swift */; };
 		72B428FE29B185CC0049C098 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B428FD29B185CC0049C098 /* EmptyStateView.swift */; };
 		72B4290029B186B30049C098 /* SearchedWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B428FF29B186B30049C098 /* SearchedWordViewModel.swift */; };
-		72B4290429B1AE410049C098 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4290329B1AE410049C098 /* Networking.swift */; };
 		72B4290829B1BD120049C098 /* ThesaurusScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4290729B1BD120049C098 /* ThesaurusScreen.swift */; };
 		72B4290B29B1C0B10049C098 /* ThesaurusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4290A29B1C0B10049C098 /* ThesaurusResponse.swift */; };
 		72B4290D29B1C0EA0049C098 /* ThesaurusMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4290C29B1C0EA0049C098 /* ThesaurusMeta.swift */; };
@@ -80,7 +79,6 @@
 		72B428FB29B181F50049C098 /* PuraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuraButton.swift; sourceTree = "<group>"; };
 		72B428FD29B185CC0049C098 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		72B428FF29B186B30049C098 /* SearchedWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedWordViewModel.swift; sourceTree = "<group>"; };
-		72B4290329B1AE410049C098 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		72B4290729B1BD120049C098 /* ThesaurusScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusScreen.swift; sourceTree = "<group>"; };
 		72B4290A29B1C0B10049C098 /* ThesaurusResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusResponse.swift; sourceTree = "<group>"; };
 		72B4290C29B1C0EA0049C098 /* ThesaurusMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusMeta.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				72B4291029B1C30B0049C098 /* Custom Views */,
-				72B4290F29B1C3020049C098 /* Networking */,
 				72B4290E29B1C2ED0049C098 /* Search Word Screen */,
 				72B4291129B1C31A0049C098 /* Thesaurus Screen */,
 			);
@@ -220,14 +217,6 @@
 				72B428FF29B186B30049C098 /* SearchedWordViewModel.swift */,
 			);
 			path = "Search Word Screen";
-			sourceTree = "<group>";
-		};
-		72B4290F29B1C3020049C098 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				72B4290329B1AE410049C098 /* Networking.swift */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		72B4291029B1C30B0049C098 /* Custom Views */ = {
@@ -383,7 +372,6 @@
 				06A897FE286BEBA500F773B5 /* ViewController.swift in Sources */,
 				06A897FA286BEBA500F773B5 /* AppDelegate.swift in Sources */,
 				72B4290829B1BD120049C098 /* ThesaurusScreen.swift in Sources */,
-				72B4290429B1AE410049C098 /* Networking.swift in Sources */,
 				72B4290D29B1C0EA0049C098 /* ThesaurusMeta.swift in Sources */,
 				72B4290B29B1C0B10049C098 /* ThesaurusResponse.swift in Sources */,
 				06A89836286C071200F773B5 /* URLBuilder.swift in Sources */,

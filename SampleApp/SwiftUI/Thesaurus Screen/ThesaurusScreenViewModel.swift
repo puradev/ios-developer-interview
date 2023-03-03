@@ -15,10 +15,10 @@ class ThesaurusScreenViewModel: ObservableObject {
     @Published var error: APIError?
     
     private var cancellables = Set<AnyCancellable>()
-    private let networking = Networking()
+//    private let networking = Networking()
     
     func fetchThesaurus(query: String) {
-        networking.fetchThesaurus(query: query)
+        API.shared.fetchThesaurus(query: query)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {

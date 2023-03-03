@@ -16,11 +16,11 @@ class SearchedWordViewModel: ObservableObject {
     @Published var isAlertShowing: Bool = false
     
     private var cancellables = Set<AnyCancellable>()
-    private let networking = Networking()
+//    private let networking = Networking()
     
     
     func fetchWord(query: String) {
-        networking.fetchWord(query: query)
+        API.shared.fetchWord(query: query)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
