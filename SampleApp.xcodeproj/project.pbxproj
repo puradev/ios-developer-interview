@@ -24,6 +24,7 @@
 		06A89838286C0FFC00F773B5 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */; };
 		06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89839286C165A00F773B5 /* WordResponse.swift */; };
 		06A8983C286C168800F773B5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8983B286C168800F773B5 /* Meta.swift */; };
+		E79AAC5029B622C400005717 /* Core-Networking in Frameworks */ = {isa = PBXBuildFile; productRef = E79AAC4F29B622C400005717 /* Core-Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79AAC5029B622C400005717 /* Core-Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +122,7 @@
 				06A8980F286BEBA600F773B5 /* SampleAppTests */,
 				06A89819286BEBA600F773B5 /* SampleAppUITests */,
 				06A897F7286BEBA500F773B5 /* Products */,
+				E79AAC4E29B622C400005717 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +178,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		E79AAC4E29B622C400005717 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,6 +201,9 @@
 			dependencies = (
 			);
 			name = SampleApp;
+			packageProductDependencies = (
+				E79AAC4F29B622C400005717 /* Core-Networking */,
+			);
 			productName = SampleApp;
 			productReference = 06A897F6286BEBA500F773B5 /* SampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -658,6 +671,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E79AAC4F29B622C400005717 /* Core-Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Core-Networking";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06A897EE286BEBA500F773B5 /* Project object */;
 }
