@@ -7,6 +7,7 @@ let package = Package(
     products: [
         .library(name: "Core-Networking", targets: ["Core-Networking"]),
         .library(name: "Feature-WordDefinition", targets: ["Feature-WordDefinition"]),
+        .library(name: "Root-Elements", targets: ["Root-Elements"]),
     ],
     dependencies: [],
     targets: [
@@ -20,7 +21,14 @@ let package = Package(
         ),
         .target(
             name: "Feature-WordDefinition",
-            dependencies: ["Core-Networking"]
+            dependencies: [
+                "Core-Networking",
+                "Root-Elements"
+            ]
+        ),
+        .target(
+            name: "Root-Elements",
+            dependencies: []
         )
     ]
 )

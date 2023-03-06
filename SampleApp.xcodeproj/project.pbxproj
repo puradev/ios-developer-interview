@@ -25,6 +25,8 @@
 		06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89839286C165A00F773B5 /* WordResponse.swift */; };
 		06A8983C286C168800F773B5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8983B286C168800F773B5 /* Meta.swift */; };
 		E79AAC5029B622C400005717 /* Core-Networking in Frameworks */ = {isa = PBXBuildFile; productRef = E79AAC4F29B622C400005717 /* Core-Networking */; };
+		E79AAC5229B6337800005717 /* Feature-WordDefinition in Frameworks */ = {isa = PBXBuildFile; productRef = E79AAC5129B6337800005717 /* Feature-WordDefinition */; };
+		E79AAC5429B6337800005717 /* Root-Elements in Frameworks */ = {isa = PBXBuildFile; productRef = E79AAC5329B6337800005717 /* Root-Elements */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79AAC5229B6337800005717 /* Feature-WordDefinition in Frameworks */,
+				E79AAC5429B6337800005717 /* Root-Elements in Frameworks */,
 				E79AAC5029B622C400005717 /* Core-Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +207,8 @@
 			name = SampleApp;
 			packageProductDependencies = (
 				E79AAC4F29B622C400005717 /* Core-Networking */,
+				E79AAC5129B6337800005717 /* Feature-WordDefinition */,
+				E79AAC5329B6337800005717 /* Root-Elements */,
 			);
 			productName = SampleApp;
 			productReference = 06A897F6286BEBA500F773B5 /* SampleApp.app */;
@@ -676,6 +682,14 @@
 		E79AAC4F29B622C400005717 /* Core-Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "Core-Networking";
+		};
+		E79AAC5129B6337800005717 /* Feature-WordDefinition */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Feature-WordDefinition";
+		};
+		E79AAC5329B6337800005717 /* Root-Elements */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "Root-Elements";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
