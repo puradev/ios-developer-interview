@@ -136,8 +136,7 @@
 		06A897F8286BEBA500F773B5 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				06A897F9286BEBA500F773B5 /* AppDelegate.swift */,
-				06A897FB286BEBA500F773B5 /* SceneDelegate.swift */,
+				E74E846329B61B87005B704A /* Application */,
 				06A897FD286BEBA500F773B5 /* ViewController.swift */,
 				06A897FF286BEBA500F773B5 /* Main.storyboard */,
 				06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */,
@@ -165,6 +164,15 @@
 				06A8981C286BEBA600F773B5 /* SampleAppUITestsLaunchTests.swift */,
 			);
 			path = SampleAppUITests;
+			sourceTree = "<group>";
+		};
+		E74E846329B61B87005B704A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				06A897F9286BEBA500F773B5 /* AppDelegate.swift */,
+				06A897FB286BEBA500F773B5 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
