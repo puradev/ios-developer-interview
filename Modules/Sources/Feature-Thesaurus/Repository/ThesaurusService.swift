@@ -6,7 +6,7 @@ import Foundation
 public struct ThesaurusService {
     public let fetchThesaurus: (String) -> AnyPublisher<[Thesaurus], APIError>
 
-    private init(
+    public init(
         fetchThesaurus: @escaping (String) -> AnyPublisher<[Thesaurus], APIError>
     ) {
         self.fetchThesaurus = fetchThesaurus

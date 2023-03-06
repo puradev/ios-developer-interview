@@ -6,7 +6,7 @@ import Foundation
 public struct WordService {
     public let fetchWord: (String) -> AnyPublisher<[Word], APIError>
 
-    private init(
+    public init(
         fetchWord: @escaping (String) -> AnyPublisher<[Word], APIError>
     ) {
         self.fetchWord = fetchWord

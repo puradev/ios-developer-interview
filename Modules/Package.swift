@@ -28,6 +28,10 @@ let package = Package(
                 "Feature-Thesaurus"
             ]
         ),
+        .testTarget(
+            name: "Feature-WordDefinition-Tests",
+            dependencies: ["Feature-WordDefinition"]
+        ),
         .target(
             name: "Feature-Thesaurus",
             dependencies: [
