@@ -1,3 +1,4 @@
+import Feature_WordDefinition
 import SwiftUI
 import UIKit
 
@@ -9,7 +10,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions
     ) {
-        let initialView = EmptyView()
+        let viewModel = WordDefinitionViewModel()
+        let initialView = WordDefinitionView(viewModel: viewModel)
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

@@ -32,6 +32,7 @@ public struct DataStateTemplate<Model: Equatable, Content: View, IdleView: View>
 
                 Text(description)
                     .font(.subheadline)
+                    .multilineTextAlignment(.center)
             }
 
         case .idle:
