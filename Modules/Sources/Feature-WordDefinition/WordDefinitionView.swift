@@ -41,6 +41,7 @@ public struct WordDefinitionView: View {
 
                 Spacer()
             }
+            .edgesIgnoringSafeArea(.bottom)
             .navigationTitle(Text("Word Definitions"))
         }
         .navigationViewStyle(.stack)
