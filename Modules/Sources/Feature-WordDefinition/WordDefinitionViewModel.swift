@@ -41,4 +41,12 @@ public final class WordDefinitionViewModel: ObservableObject {
             )
             .store(in: &cancellables)
     }
+
+    public func presentThesaurus(_ isPresented: Bool) {
+        state.isThesaurusPresented = isPresented
+    }
+
+    public func isThesaurusPresented() -> Bool {
+        state.isThesaurusPresented
+    }
 }

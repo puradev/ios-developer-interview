@@ -8,7 +8,7 @@ extension WordEndpoint: HTTPRequestProtocol {
     public var path: String {
         switch self {
         case let .fetchWord(word):
-            return "\(word)"
+            return "/collegiate/json/\(word)"
         }
     }
 

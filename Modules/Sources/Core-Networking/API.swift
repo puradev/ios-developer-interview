@@ -24,10 +24,9 @@ public struct API: APIProtocol {
         for request: HTTPRequestProtocol
     ) -> AnyPublisher<Data, APIError> {
         let urlRequest = requestBuilder.build(from: request)
-
         return session
             .anyDataTaskPublisher(for: urlRequest)
-            .tryMap { $0.0 }
+            .map { $0.0 }
             .mapError { APIError.custom($0.localizedDescription) }
             .eraseToAnyPublisher()
     }

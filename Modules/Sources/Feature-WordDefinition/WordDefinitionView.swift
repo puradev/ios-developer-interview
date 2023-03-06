@@ -1,3 +1,4 @@
+import Feature_Thesaurus
 import Root_Elements
 import SwiftUI
 
@@ -43,6 +44,21 @@ public struct WordDefinitionView: View {
             .navigationTitle(Text("Word Definitions"))
         }
         .navigationViewStyle(.stack)
+        .sheet(
+            isPresented: .init(
+                get: viewModel.isThesaurusPresented,
+                set: viewModel.presentThesaurus
+            ),
+            content: {
+                ThesaurusView(
+                    viewModel: .init(
+                        initialState: .init(
+                            query: viewModel.state.query
+                        )
+                    )
+                )
+            }
+        )
     }
 
     @ViewBuilder
@@ -60,6 +76,16 @@ public struct WordDefinitionView: View {
                         ForEach(model.definitions, id: \.self) {
                             Text($0)
                         }
+                    }
+                )
+
+                Section(
+                    header: Text("More"),
+                    content: {
+                        Button(
+                            action: { viewModel.presentThesaurus(true) },
+                            label: { Text("Check Thesaurus") }
+                        )
                     }
                 )
             }

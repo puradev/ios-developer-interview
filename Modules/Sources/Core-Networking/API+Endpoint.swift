@@ -16,7 +16,7 @@ public protocol HTTPRequestProtocol {
 }
 
 public extension HTTPRequestProtocol {
-    var baseURL: URL { URL(string: "https://www.dictionaryapi.com/api/v3/references/collegiate/json/")! }
+    var baseURL: URL { URL(string: "https://www.dictionaryapi.com/api/v3/references")! }
     var method: HTTPMethod { .get }
 }
 
