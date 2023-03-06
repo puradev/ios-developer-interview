@@ -6,6 +6,7 @@ let package = Package(
     platforms: [.iOS(.v15)],
     products: [
         .library(name: "Core-Networking", targets: ["Core-Networking"]),
+        .library(name: "Feature-WordDefinition", targets: ["Feature-WordDefinition"]),
     ],
     dependencies: [],
     targets: [
@@ -17,5 +18,9 @@ let package = Package(
             name: "Core-Networking-Tests",
             dependencies: ["Core-Networking"]
         ),
+        .target(
+            name: "Feature-WordDefinition",
+            dependencies: ["Core-Networking"]
+        )
     ]
 )
