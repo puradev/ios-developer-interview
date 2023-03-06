@@ -39,6 +39,10 @@ let package = Package(
                 "Root-Elements"
             ]
         ),
+        .testTarget(
+            name: "Feature-Thesaurus-Tests",
+            dependencies: ["Feature-Thesaurus"]
+        ),
         .target(
             name: "Root-Elements",
             dependencies: []
