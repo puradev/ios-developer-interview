@@ -54,9 +54,6 @@ public enum APIRoute {
 class API: NSObject {
     static let shared = API()
     let session = URLSession.shared
-    
-    static let baseDictionaryUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
-    static let baseThesaurusUrl = "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
 
     func fetch<T: Codable>(route: APIRoute) async throws -> T {
         try route.validateQuery()

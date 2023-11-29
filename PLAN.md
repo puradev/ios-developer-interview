@@ -45,6 +45,8 @@ When I ran this I thougth the results came as multiple words, but now I realize 
 
 Rather than swiping to favorite, I can have a simple button. In order to make this a little more "safe" each word may need an `id` but I could also use the word itself as a key.
 
+---
+
 5. Tab View
 
 > Rather than make this a tab, I added an option to get synonyms for the word that was searched.
