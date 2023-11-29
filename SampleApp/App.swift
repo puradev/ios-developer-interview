@@ -1,13 +1,23 @@
+import ComposableArchitecture
 import SwiftUI
 
 @main
 struct TheWordApp: App {
-
-    init() {}
-
     var body: some Scene {
         WindowGroup {
-            Text("HELLLO")
+            AppFeatureRootView(
+                store: Store(
+                    initialState: AppFeature.State(),
+                    reducer: {
+                        #if DEBUG
+                        AppFeature()
+                            ._printChanges()
+                        #else
+                        AppFeature()
+                        #endif
+                    }
+                )
+            )
         }
     }
 }

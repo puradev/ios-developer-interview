@@ -8,21 +8,32 @@
 import Foundation
 
 
-struct WordResponse: Codable {
+public struct WordResponse: Codable {
     let meta: Meta
     let shortdef: [String]
     
     var word: Word {
         return Word(text: meta.stems.first!, definitions: shortdef)
     }
-    
-    static func parseData(_ data: Data) -> WordResponse? {
-        do {
-            let response = try JSONDecoder().decode([WordResponse].self, from: data)
-            return response.first
-        } catch {
-            print("WORD RESPONSE ERROR: ", error.localizedDescription)
-        }
-        return nil
+}
+
+extension WordResponse: Equatable {}
+
+extension WordResponse {
+    static var fixture: Self {
+        WordResponse(
+            meta: Meta(
+                id: "1",
+                uuid: "123",
+                sort: "1",
+                stems: ["hello"],
+                offensive: false
+            ),
+            shortdef: [
+                "Lorem ipsum dolor sit amet",
+                "consectetur adipiscing elit",
+                "sed do eiusmod tempor",
+            ]
+        )
     }
 }

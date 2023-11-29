@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06A897FE286BEBA500F773B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A897FD286BEBA500F773B5 /* ViewController.swift */; };
 		06A89803286BEBA600F773B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A89802286BEBA600F773B5 /* Assets.xcassets */; };
 		06A89806286BEBA600F773B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */; };
 		06A89811286BEBA600F773B5 /* SampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89810286BEBA600F773B5 /* SampleAppTests.swift */; };
@@ -18,11 +17,14 @@
 		06A8982E286BF07B00F773B5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8982D286BF07B00F773B5 /* Word.swift */; };
 		06A89832286BF3D200F773B5 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89831286BF3D200F773B5 /* APIError.swift */; };
 		06A89836286C071200F773B5 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89835286C071200F773B5 /* URLBuilder.swift */; };
-		06A89838286C0FFC00F773B5 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */; };
 		06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89839286C165A00F773B5 /* WordResponse.swift */; };
 		06A8983C286C168800F773B5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8983B286C168800F773B5 /* Meta.swift */; };
 		D26C24C22B16E4EE00415AEA /* Data+JSONPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C24C12B16E4EE00415AEA /* Data+JSONPrettyPrint.swift */; };
 		D26C24C52B16E94C00415AEA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C24C42B16E94C00415AEA /* App.swift */; };
+		D26C24C82B16EB2B00415AEA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D26C24C72B16EB2B00415AEA /* ComposableArchitecture */; };
+		D26C24CB2B16EB5F00415AEA /* WordSearchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C24CA2B16EB5F00415AEA /* WordSearchFeature.swift */; };
+		D26C24CD2B16EC4800415AEA /* API+Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C24CC2B16EC4800415AEA /* API+Dependency.swift */; };
+		D26C24D02B16FDF100415AEA /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26C24CF2B16FDF100415AEA /* AppFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		06A897F6286BEBA500F773B5 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A897FD286BEBA500F773B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06A89802286BEBA600F773B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06A89805286BEBA600F773B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06A89807286BEBA600F773B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,11 +59,13 @@
 		06A8982D286BF07B00F773B5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		06A89831286BF3D200F773B5 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		06A89835286C071200F773B5 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
-		06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		06A89839286C165A00F773B5 /* WordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordResponse.swift; sourceTree = "<group>"; };
 		06A8983B286C168800F773B5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		D26C24C12B16E4EE00415AEA /* Data+JSONPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSONPrettyPrint.swift"; sourceTree = "<group>"; };
 		D26C24C42B16E94C00415AEA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		D26C24CA2B16EB5F00415AEA /* WordSearchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSearchFeature.swift; sourceTree = "<group>"; };
+		D26C24CC2B16EC4800415AEA /* API+Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Dependency.swift"; sourceTree = "<group>"; };
+		D26C24CF2B16FDF100415AEA /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26C24C82B16EB2B00415AEA /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,7 @@
 				06A89835286C071200F773B5 /* URLBuilder.swift */,
 				06A89831286BF3D200F773B5 /* APIError.swift */,
 				06A89829286BEECA00F773B5 /* Tokens.swift */,
+				D26C24CC2B16EC4800415AEA /* API+Dependency.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -174,10 +179,26 @@
 		D26C24C32B16E63300415AEA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */,
-				06A897FD286BEBA500F773B5 /* ViewController.swift */,
+				D26C24CE2B16FDDA00415AEA /* AppFeature */,
+				D26C24C92B16EB4F00415AEA /* WordSearchFeature */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D26C24C92B16EB4F00415AEA /* WordSearchFeature */ = {
+			isa = PBXGroup;
+			children = (
+				D26C24CA2B16EB5F00415AEA /* WordSearchFeature.swift */,
+			);
+			path = WordSearchFeature;
+			sourceTree = "<group>";
+		};
+		D26C24CE2B16FDDA00415AEA /* AppFeature */ = {
+			isa = PBXGroup;
+			children = (
+				D26C24CF2B16FDF100415AEA /* AppFeature.swift */,
+			);
+			path = AppFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +217,9 @@
 			dependencies = (
 			);
 			name = SampleApp;
+			packageProductDependencies = (
+				D26C24C72B16EB2B00415AEA /* ComposableArchitecture */,
+			);
 			productName = SampleApp;
 			productReference = 06A897F6286BEBA500F773B5 /* SampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +292,9 @@
 				Base,
 			);
 			mainGroup = 06A897ED286BEBA500F773B5;
+			packageReferences = (
+				D26C24C62B16EB2B00415AEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 06A897F7286BEBA500F773B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,8 +337,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26C24D02B16FDF100415AEA /* AppFeature.swift in Sources */,
+				D26C24CB2B16EB5F00415AEA /* WordSearchFeature.swift in Sources */,
 				06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */,
-				06A897FE286BEBA500F773B5 /* ViewController.swift in Sources */,
 				D26C24C52B16E94C00415AEA /* App.swift in Sources */,
 				06A89836286C071200F773B5 /* URLBuilder.swift in Sources */,
 				06A8983C286C168800F773B5 /* Meta.swift in Sources */,
@@ -319,7 +347,7 @@
 				06A89832286BF3D200F773B5 /* APIError.swift in Sources */,
 				06A8982A286BEECA00F773B5 /* Tokens.swift in Sources */,
 				D26C24C22B16E4EE00415AEA /* Data+JSONPrettyPrint.swift in Sources */,
-				06A89838286C0FFC00F773B5 /* TableViewDataSource.swift in Sources */,
+				D26C24CD2B16EC4800415AEA /* API+Dependency.swift in Sources */,
 				06A8982C286BF00800F773B5 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +680,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D26C24C62B16EB2B00415AEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D26C24C72B16EB2B00415AEA /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D26C24C62B16EB2B00415AEA /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06A897EE286BEBA500F773B5 /* Project object */;
 }

@@ -15,3 +15,5 @@ struct Meta: Codable {
     let stems: [String]
     let offensive: Bool
 }
+
+extension Meta: Equatable {}
