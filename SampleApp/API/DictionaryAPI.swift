@@ -1,12 +1,18 @@
 import Dependencies
+import Foundation
 
 public struct DictionaryAPI {
+    /// https://dictionaryapi.com/products/api-collegiate-dictionary
     public var fetch: (_ query: String) async throws -> [WordResponse]
 }
 
 extension DictionaryAPI: DependencyKey {
     public static var liveValue: DictionaryAPI {
-        Self(fetch: API.shared.fetch(word:))
+        DictionaryAPI(
+            fetch: { query in
+                try await API.shared.fetch(route: .getDefinition(query))
+            }
+        )
     }
 }
 

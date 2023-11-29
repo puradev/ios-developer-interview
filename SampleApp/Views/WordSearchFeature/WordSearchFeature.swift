@@ -9,6 +9,7 @@ public struct WordSearchFeature: Reducer {
         public var word: WordResponse?
         public var isWordRequestInFlight: Bool = false
         @PresentationState public var alert: AlertState<Action.Alert>?
+        public var thesaurus: ThesaurusFeature.State?
     }
 
     // MARK: - Action
@@ -18,6 +19,7 @@ public struct WordSearchFeature: Reducer {
         }
 
         case alert(PresentationAction<Alert>)
+        case thesaurus(ThesaurusFeature.Action)
         case setQuery(query: String)
         case submitTapped
         case wordResponse(words: [WordResponse])
@@ -51,6 +53,7 @@ public struct WordSearchFeature: Reducer {
             case let .wordResponse(words):
                 state.isWordRequestInFlight = false
                 state.word = words.first
+                state.thesaurus = .init(query: state.query)
                 state.query = ""
                 return .none
 
@@ -60,7 +63,6 @@ public struct WordSearchFeature: Reducer {
                 return .none
 
             case let .wordRequestFailed(message):
-                state.query = ""
                 state.isWordRequestInFlight = false
                 state.alert = AlertState(
                     title: {
@@ -88,7 +90,13 @@ public struct WordSearchFeature: Reducer {
             case .alert(.dismiss):
                 state.alert = nil
                 return .none
+
+            case .thesaurus:
+                return .none
             }
+        }
+        .ifLet(\.thesaurus, action: /Action.thesaurus) {
+            ThesaurusFeature()
         }
     }
 
@@ -201,6 +209,15 @@ public struct WordSearchFeatureView: View {
                 .frame(maxHeight: .infinity, alignment: .center)
                 .padding(.bottom, 64)
             }
+
+            IfLetStore(
+                store.scope(
+                    state: \.thesaurus,
+                    action: { .thesaurus($0) }
+                ), 
+                then: ThesaurusFeatureView.init(store:)
+            )
+            .padding(.top)
         }
         .frame(maxHeight: .infinity, alignment: .top)
         .padding()

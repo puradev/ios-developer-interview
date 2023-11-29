@@ -7,17 +7,40 @@
 
 import Foundation
 
-protocol WordFetchProvider {
-    func fetch(word query: String) async throws -> [WordResponse]
-}
+public enum APIRoute {
+    case getDefinition(String)
+    case getSynonyms(String)
 
-class API: NSObject, WordFetchProvider {
-    static let shared = API()
-    let session = URLSession.shared
-    
-    static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    private var baseURL: String {
+        switch self {
+        case .getDefinition:
+            return "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+        case .getSynonyms:
+            return "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
+        }
+    }
 
-    func fetch(word query: String) async throws -> [WordResponse] {
+    var url: String {
+        switch self {
+        case let .getDefinition(query):
+            return baseURL + query + "?key=" + Tokens.apiKeyDict
+
+        case let .getSynonyms(query):
+            return baseURL + query + "?key=" + Tokens.apiKeyThes
+        }
+    }
+
+    var query: String {
+        switch self {
+        case let .getDefinition(query):
+            return query
+
+        case let .getSynonyms(query):
+            return query
+        }
+    }
+
+    func validateQuery() throws {
         guard !query.isEmpty else {
             throw APIError.emptyQuery
         }
@@ -25,25 +48,35 @@ class API: NSObject, WordFetchProvider {
         guard query.count > 2 else {
             throw APIError.tooShort(query)
         }
+    }
+}
 
-        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
+class API: NSObject {
+    static let shared = API()
+    let session = URLSession.shared
+    
+    static let baseDictionaryUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    static let baseThesaurusUrl = "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
 
-        guard let url = URL(string: requestURL) else {
+    func fetch<T: Codable>(route: APIRoute) async throws -> T {
+        try route.validateQuery()
+
+        guard let url = URL(string: route.url) else {
             throw APIError.badURL
         }
 
         #if DEBUG
-        print("HTTP Request in flight for \(requestURL)")
+        print("HTTP Request in flight for \(route.url)")
         #endif
 
         let request = URLRequest(url: url)
         let (data, _) = try await session.data(for: request)
         #if DEBUG
-        print("HTTP Response for \(requestURL)")
+        print("HTTP Response for \(route.url)")
         // This log can be pretty verbose, todo would be to make it a flag at buildtime?
         print(data.prettyPrintedJSONString ?? "")
         #endif
-        let result = try JSONDecoder().decode([WordResponse].self, from: data)
+        let result = try JSONDecoder().decode(T.self, from: data)
         return result
     }
 }
