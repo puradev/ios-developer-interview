@@ -47,6 +47,8 @@ Rather than swiping to favorite, I can have a simple button. In order to make th
 
 5. Tab View
 
+> Rather than make this a tab, I added an option to get synonyms for the word that was searched.
+
 - Tabs for Dictionary/Thesaurus
 
 6. Swipe action to "Favorite" a word

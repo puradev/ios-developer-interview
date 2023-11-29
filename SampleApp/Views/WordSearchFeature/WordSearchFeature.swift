@@ -53,8 +53,12 @@ public struct WordSearchFeature: Reducer {
             case let .wordResponse(words):
                 state.isWordRequestInFlight = false
                 state.word = words.first
-                state.thesaurus = .init(query: state.query)
                 state.query = ""
+
+                if let word = state.word?.word.text {
+                    state.thesaurus = .init(query: word)
+                }
+
                 return .none
 
             case let .setQuery(query):
@@ -265,6 +269,7 @@ public struct WordSearchFeatureView: View {
             },
             withDependencies: {
                 $0.dictionaryAPI = .liveValue
+                $0.thesaurusAPI = .liveValue
             }
         )
     )
