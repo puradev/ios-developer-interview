@@ -31,3 +31,16 @@ public struct AppFeatureRootView: View {
         )
     }
 }
+
+
+#Preview {
+    AppFeatureRootView(
+        store: Store(
+            initialState: AppFeature.State(),
+            reducer: {
+                AppFeature()
+                    ._printChanges()
+            }
+        )
+    )
+}

@@ -163,6 +163,7 @@ public struct WordSearchFeatureView: View {
                 }
             }
             .frame(height: 64, alignment: .top)
+            .padding(.top)
 
             if let word = viewStore.word {
                 VStack(alignment: .leading, spacing: 12) {
