@@ -10,7 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     var dataSource = TableViewDataSource(state: .empty)
-    
+    let api: WordFetchProvider = API.shared
+
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,19 +20,21 @@ class ViewController: UIViewController {
         guard let text = textField.text else {
             return
         }
-        
-        API.shared.fetchWord(query: text) { response in
-            switch response {
-            case .success(let data):
-                guard let r = WordResponse.parseData(data) else {
+
+        Task {
+            do {
+                guard let wordResponse = try await api.fetch(word: text).first else {
+                    self.dataSource.updateState(.empty) {
+                        self.tableView.reloadData()
+                    }
+
                     return
                 }
-                
-                self.dataSource.updateState(.word(r.word)) {
+
+                self.dataSource.updateState(.word(wordResponse.word)) {
                     self.tableView.reloadData()
                 }
-                
-            case .failure(let error):
+            } catch {
                 self.dataSource.updateState(.empty) {
                     self.tableView.reloadData()
                 }
