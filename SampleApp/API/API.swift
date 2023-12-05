@@ -10,23 +10,43 @@ import Foundation
 class API: NSObject {
     static let shared = API()
     let session = URLSession.shared
-    
-    static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
-    
-    func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
+
+    enum RequestKind {
+        case dictionary
+        case thesaurus
+
+        var baseURL: String {
+            switch self {
+            case .dictionary:
+                return "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+            case .thesaurus:
+                return "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
+            }
+        }
+
+        var token: String {
+            switch self {
+            case .dictionary:
+                return Tokens.apiKeyDict
+            case .thesaurus:
+                return Tokens.apiKeyThes
+            }
+        }
+    }
+
+    func fetchWord(query: String, requestKind: RequestKind, _ completion: @escaping (Result<Data, APIError>) -> Void) {
         guard !query.isEmpty else {
             completion(.failure(.emptyQuery))
             return
         }
         
         guard query.count > 2 else {
-            completion(.failure(.tooShort(query)))
+            completion(.failure(.tooShort(query: query)))
             return
         }
-        
-        
-        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
-        
+
+        let requestURL = URLBuilder(baseURL: requestKind.baseURL, word: query.lowercased(), token: requestKind.token).requestURL
+
         guard let url = URL(string: requestURL) else {
             completion(.failure(.badURL))
             return
@@ -46,10 +66,6 @@ class API: NSObject {
                 return
             }
             completion(.success(data))
-            
-
         }.resume()
-        
     }
-    
 }

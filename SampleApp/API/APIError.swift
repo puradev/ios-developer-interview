@@ -12,6 +12,7 @@ enum APIError: Error {
     case badURL
     case custom(String)
     case noData
+    case parsingIssue
     case emptyQuery
-    case tooShort(String)
+    case tooShort(query: String)
 }

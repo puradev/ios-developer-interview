@@ -13,7 +13,7 @@ class TableViewDataSource: NSObject {
     
     enum State {
         case empty
-        case word(Word)
+        case word(DictionaryWord)
     }
 
     var state: State

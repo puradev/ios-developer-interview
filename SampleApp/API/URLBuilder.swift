@@ -7,13 +7,13 @@
 
 import Foundation
 
-
 struct URLBuilder {
-    var baseURL: String
-    var word: String
+    let baseURL: String
+    let word: String
+    let token: String
 
     var requestURL: String {
-        let url = baseURL + word + "?key=" + Tokens.apiKeyDict
+        let url = baseURL + word + "?key=" + token
         return url
     }
 }
