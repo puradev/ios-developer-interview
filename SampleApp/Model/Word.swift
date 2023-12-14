@@ -7,12 +7,10 @@
 
 import Foundation
 
-
 struct Word: Codable {
     var text: String
     var definitions: [String]
-    
-    
+
 //    static func parseData(_ data: Data) -> Word {
 //        var word: Word = Word()
 //

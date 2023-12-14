@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct URLBuilder {
     var baseURL: String
     var word: String

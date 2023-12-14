@@ -8,9 +8,8 @@
 import Foundation
 import UIKit
 
-
 class TableViewDataSource: NSObject {
-    
+
     enum State {
         case empty
         case word(Word)
@@ -20,8 +19,8 @@ class TableViewDataSource: NSObject {
     init(state: State) {
         self.state = state
     }
-    
-    func updateState(_ state: State, completion: @escaping () -> ()) {
+
+    func updateState(_ state: State, completion: @escaping () -> Void) {
         self.state = state
         DispatchQueue.main.async {
             completion()
@@ -36,14 +35,14 @@ extension TableViewDataSource: UITableViewDataSource {
         }
         return word.definitions.count + 1
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard case let State.word(word) = state  else {
             return UITableViewCell()
         }
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.selectionStyle = .none
-        
+
         if indexPath.row == 0 {
             cell.textLabel?.text = "word:"
             cell.detailTextLabel?.text = word.text
