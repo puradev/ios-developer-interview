@@ -7,13 +7,13 @@
 
 import Foundation
 
-class API: NSObject {
-    static let shared = API()
+public class API: NSObject {
+    public static let shared = API()
     let session = URLSession.shared
 
     static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
 
-    func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
+    public func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
         guard !query.isEmpty else {
             completion(.failure(.emptyQuery))
             return
