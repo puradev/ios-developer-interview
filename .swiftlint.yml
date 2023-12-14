@@ -1,0 +1,10 @@
+excluded:
+  - fastlane/*
+  - docs/*
+
+disabled_rules:
+  - nesting
+
+opt_in_rules:
+  - accessibility_label_for_image
+  - accessibility_trait_for_button
