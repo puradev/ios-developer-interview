@@ -10,12 +10,11 @@ import UIKit
 
 
 class TableViewDataSource: NSObject {
-    
     enum State {
         case empty
-        case word(Word)
+        case entries([WordEntry])
     }
-
+    
     var state: State
     init(state: State) {
         self.state = state
@@ -30,26 +29,43 @@ class TableViewDataSource: NSObject {
 }
 
 extension TableViewDataSource: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard case let State.word(word) = state  else {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard case let State.entries(entries) = state  else {
             return 0
         }
-        return word.definitions.count + 1
+        return entries.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard case let State.entries(entries) = state  else {
+            return 0
+        }
+        return entries[section].pronunciationsCount + entries[section].shortDefinitions.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard case let State.entries(entries) = state  else {
+            return nil
+        }
+        return entries[section].sectionTitle
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard case let State.word(word) = state  else {
+        guard case let State.entries(entries) = state  else {
             return UITableViewCell()
         }
+        let wordEntry = entries[indexPath.section]
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         cell.selectionStyle = .none
         
-        if indexPath.row == 0 {
-            cell.textLabel?.text = "word:"
-            cell.detailTextLabel?.text = word.text
+        if wordEntry.pronunciationsCount > 0, indexPath.row >= 0, indexPath.row < wordEntry.pronunciationsCount {
+            cell.textLabel?.text = "pronunciation:"
+            if let pronunciation = wordEntry.headwordInformation.pronunciations?[indexPath.row].formatMerriamWebster {
+                cell.detailTextLabel?.text = pronunciation
+            }
         } else {
             cell.textLabel?.text = "definition:"
-            cell.detailTextLabel?.text = word.definitions[indexPath.row - 1]
+            cell.detailTextLabel?.text = wordEntry.shortDefinitions[indexPath.row - wordEntry.pronunciationsCount]
         }
         return cell
     }

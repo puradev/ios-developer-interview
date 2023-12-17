@@ -23,11 +23,9 @@ class ViewController: UIViewController {
         API.shared.fetchWord(query: text) { response in
             switch response {
             case .success(let data):
-                guard let r = WordResponse.parseData(data) else {
-                    return
-                }
+                let entries = WordEntry.parseData(data)
                 
-                self.dataSource.updateState(.word(r.word)) {
+                self.dataSource.updateState(.entries(entries)) {
                     self.tableView.reloadData()
                 }
                 
