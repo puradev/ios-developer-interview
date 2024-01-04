@@ -20,23 +20,25 @@ class ViewController: UIViewController {
             return
         }
 
-        API.shared.fetchWord(query: text) { response in
-            switch response {
-            case .success(let data):
-                guard let response = WordResponse.parseData(data) else {
-                    return
-                }
+        Task {
+          let response = await API.shared.fetchWord(query: text)
 
-                self.dataSource.updateState(.word(response.word)) {
-                    self.tableView.reloadData()
-                }
+          switch response {
+          case .success(let data):
+              guard let response = WordResponse.parseData(data) else {
+                  return
+              }
 
-            case .failure(let error):
-                self.dataSource.updateState(.empty) {
-                    self.tableView.reloadData()
-                }
-                print("NETWORK ERROR: ", error.localizedDescription)
-            }
+              self.dataSource.updateState(.word(response.word)) {
+                  self.tableView.reloadData()
+              }
+
+          case .failure(let error):
+              self.dataSource.updateState(.empty) {
+                  self.tableView.reloadData()
+              }
+              print("NETWORK ERROR: ", error.localizedDescription)
+          }
         }
     }
 
