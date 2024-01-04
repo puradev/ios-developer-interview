@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,6 +58,7 @@
 		06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		06A89839286C165A00F773B5 /* WordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordResponse.swift; sourceTree = "<group>"; };
 		06A8983B286C168800F773B5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		D8A955052B474B060083CB57 /* API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = API; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		06A897ED286BEBA500F773B5 = {
 			isa = PBXGroup;
 			children = (
+				D8A955052B474B060083CB57 /* API */,
 				06A897F8286BEBA500F773B5 /* SampleApp */,
 				06A8980F286BEBA600F773B5 /* SampleAppTests */,
 				06A89819286BEBA600F773B5 /* SampleAppUITests */,
@@ -242,7 +244,6 @@
 			);
 			mainGroup = 06A897ED286BEBA500F773B5;
 			packageReferences = (
-				D8963FC52B2A935E00390D36 /* XCLocalSwiftPackageReference "API" */,
 			);
 			productRefGroup = 06A897F7286BEBA500F773B5 /* Products */;
 			projectDirPath = "";
@@ -657,13 +658,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		D8963FC52B2A935E00390D36 /* XCLocalSwiftPackageReference "API" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = API;
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		D8963FC62B2A935E00390D36 /* API */ = {
