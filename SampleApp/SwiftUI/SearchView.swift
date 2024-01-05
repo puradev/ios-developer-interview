@@ -100,9 +100,11 @@ struct SearchView: View {
             text: $state.query,
             prompt: Text("Search for a word")
           )
+          .foregroundColor(.black)
+
           .padding(8)
           .background(
-            Color.init(hue: 0, saturation: 0, brightness: 0.95)
+            Color.white
             .clipShape(.rect(cornerRadius: 8))
           )
 
@@ -123,7 +125,7 @@ struct SearchView: View {
           .disabled(state.status == .loading)
         }
         .padding()
-        .background(.blue.opacity(0.95))
+        .background(Color.accentColor)
       }
 
     }
