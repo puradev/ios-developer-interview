@@ -44,9 +44,14 @@ struct SearchView: View {
 
     var body: some View {
       List {
-        ForEach(state.words, id: \.text) { word in
+        ForEach(state.words) { word in
           VStack(alignment: .leading) {
-            Text(word.text)
+            HStack(alignment: .firstTextBaseline) {
+              Text(word.text)
+                .font(.title)
+              Text(word.functionalLabel)
+                .font(.callout)
+            }
             Text(word.definitions.joined(separator: ","))
           }
         }
