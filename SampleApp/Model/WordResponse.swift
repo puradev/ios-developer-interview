@@ -15,13 +15,17 @@ struct WordResponse: Codable {
         return Word(text: meta.stems.first!, definitions: shortdef)
     }
 
-    static func parseData(_ data: Data) -> WordResponse? {
+    static func words(from data: Data) -> [WordResponse]? {
         do {
             let response = try JSONDecoder().decode([WordResponse].self, from: data)
-            return response.first
+            return response
         } catch {
             print("WORD RESPONSE ERROR: ", error.localizedDescription)
         }
         return nil
+    }
+
+    static func word(from data: Data) -> WordResponse? {
+      words(from: data)?.first
     }
 }
