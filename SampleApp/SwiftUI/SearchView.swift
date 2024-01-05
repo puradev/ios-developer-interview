@@ -13,8 +13,10 @@ class SearchState {
   var error: APIError?
   var words: [Word] = []
   var query: String = ""
+  var isLoading: Bool = false
 
   func searchTapped() async {
+    self.isLoading = true
     let response = await API.shared.fetchWord(query: query)
 
     switch response {
@@ -27,8 +29,9 @@ class SearchState {
 
     case .failure(let error):
       self.words = []
-      print("NETWORK ERROR: ", error.localizedDescription)
+      self.error = error
     }
+    self.isLoading = false
   }
 }
 
@@ -58,15 +61,28 @@ struct SearchView: View {
             .clipShape(.rect(cornerRadius: 8))
           )
 
-          Button("Search") {
+          Button(action: {
             Task {
               await state.searchTapped()
             }
-          }
+          }, label: {
+            if state.isLoading {
+              ProgressView().progressViewStyle(.circular)
+                .frame(minWidth: 40)
+            } else {
+              Text("Search")
+                .frame(minWidth: 40)
+            }
+          })
           .buttonStyle(.borderedProminent)
+          .disabled(state.isLoading)
+
+
         }
         .padding()
+        .background(.blue.opacity(0.95))
       }
+
     }
 }
 
