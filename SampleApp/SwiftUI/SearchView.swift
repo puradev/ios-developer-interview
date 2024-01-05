@@ -21,11 +21,15 @@ class SearchState {
 
     switch response {
     case .success(let data):
-        guard let response = WordResponse.words(from: data) else {
-            return
+      do {
+        guard let response = try WordResponse.words(from: data) else {
+          self.error = .noData
+          return
         }
-
-      self.words = response.map { $0.word }
+        self.words = response.map { $0.word }
+      } catch {
+        self.error = .custom(error.localizedDescription)
+      }
 
     case .failure(let error):
       self.words = []
