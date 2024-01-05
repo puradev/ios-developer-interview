@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Word: Codable {
+struct Word: Codable, Identifiable {
+    let id: String
     var text: String
     var definitions: [String]
 
