@@ -10,41 +10,49 @@ import API
 
 @Observable
 class SearchState {
-  var error: APIError?
-  var words: [Word] = []
   var query: String = ""
-  var isLoading: Bool = false
+  var status: Status = .new
+
+  enum Status: Equatable {
+    case new
+    case loading
+    case noResults
+    case error(APIError)
+    case results([Word])
+  }
 
   func searchTapped() async {
-    self.isLoading = true
+    self.status = .loading
     let response = await API.shared.fetchWord(query: query)
 
     switch response {
     case .success(let data):
       do {
         guard let response = try WordResponse.words(from: data) else {
-          self.error = .noData
+          self.status = .error(.noData)
           return
         }
-        self.words = response.map { $0.word }
+        let words = response.map { $0.word }
+        self.status = .results(words)
       } catch {
-        self.error = .custom(error.localizedDescription)
+        self.status = .error(.custom(error.localizedDescription))
       }
 
     case .failure(let error):
-      self.words = []
-      self.error = error
+      self.status = .error(error)
     }
-    self.isLoading = false
+
   }
 }
 
 struct SearchView: View {
   @State var state: SearchState
 
-    var body: some View {
-      List {
-        ForEach(state.words) { word in
+  var body: some View {
+    List {
+      switch state.status {
+      case .results(let words):
+        ForEach(words) { word in
           VStack(alignment: .leading) {
             HStack(alignment: .firstTextBaseline) {
               Text(word.text)
@@ -55,7 +63,35 @@ struct SearchView: View {
             Text(word.definitions.joined(separator: ","))
           }
         }
+      default:
+        EmptyView()
       }
+    }
+    .overlay {
+      switch state.status {
+      case .new:
+        ContentUnavailableView(
+          "Search for a word",
+          systemImage: "magnifyingglass"
+        )
+      case .loading:
+        ProgressView().progressViewStyle(.circular)
+      case .noResults:
+        ContentUnavailableView(
+          "No results for \(state.query)",
+          systemImage: "questionmark.square.dashed"
+        )
+      case .error(let apiError):
+        ContentUnavailableView(
+          "Something went wrong",
+          systemImage: "exclamationmark.triangle.fill",
+          description: Text(apiError.localizedDescription)
+        )
+
+      default:
+        EmptyView()
+      }
+    }
       .listStyle(.plain)
       .safeAreaInset(edge: .top) {
         HStack {
@@ -75,7 +111,7 @@ struct SearchView: View {
               await state.searchTapped()
             }
           }, label: {
-            if state.isLoading {
+            if state.status == .loading {
               ProgressView().progressViewStyle(.circular)
                 .frame(minWidth: 40)
             } else {
@@ -83,10 +119,8 @@ struct SearchView: View {
                 .frame(minWidth: 40)
             }
           })
-          .buttonStyle(.borderedProminent)
-          .disabled(state.isLoading)
-
-
+          .tint(.white)
+          .disabled(state.status == .loading)
         }
         .padding()
         .background(.blue.opacity(0.95))
