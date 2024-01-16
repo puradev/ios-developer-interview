@@ -18,19 +18,33 @@ class SampleAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testApiKeysRetrieval() {
+        // Assuming you have the correct API keys set up in your Config.plist,
+        // these tests should pass if the keys are correctly retrieved.
+        XCTAssertNotNil(Tokens.apiKeyDict, "The dictionary API key should not be nil")
+        XCTAssertNotNil(Tokens.apiKeyThes, "The thesaurus API key should not be nil")
+        XCTAssertNotNil(Tokens.apiKeyGiphy, "The Giphy API key should not be nil")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testDictionaryURLBuilder() {
+        
+        // Check if the URLs contain the base URL, word query, and the corresponding API keys.
+        let word = "test"
+        let requestURL = URLBuilder(baseURL: API.baseDictionaryURL, word: word.lowercased()).requestDictionaryURL
+        
+        XCTAssertTrue(requestURL.contains("https://www.dictionaryapi.com/api/v3/references/collegiate/json"), "The dictionary URL should contain the base URL")
+        XCTAssertTrue(requestURL.contains("test"), "The dictionary URL should contain the word query")
+        XCTAssertTrue(requestURL.contains(Tokens.apiKeyDict), "The dictionary URL should contain the API key")
     }
-
+    
+    func testThesaurusURLBuilder() {
+        
+        // Check if the URLs contain the base URL, word query, and the corresponding API keys.
+        let word = "test"
+        let requestURL = URLBuilder(baseURL: API.baseThesaurusURL, word: word.lowercased()).requestThesaurusURL
+        
+        XCTAssertTrue(requestURL.contains("https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"), "The thesaurus URL should contain the base URL")
+        XCTAssertTrue(requestURL.contains("test"), "The thesaurus URL should contain the word query")
+        XCTAssertTrue(requestURL.contains(Tokens.apiKeyThes), "The thesaurus URL should contain the API key")
+    }
 }

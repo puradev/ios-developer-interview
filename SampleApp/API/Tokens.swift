@@ -7,7 +7,34 @@
 
 import Foundation
 
+//Just had to remove the API Keys from the repo. I moved them into a Config.plist file that is .gitignored.
+enum Service: String {
+    case Dictionary = "apiKeyDictionary"
+    case Thesaurus = "apiKeyThesaurus"
+    case Giphy = "apiKeyGiphy"
+}
+
 struct Tokens {
-    static let apiKeyDict = "0b15979d-724f-4686-8686-dedb9983df50"
-    static let apiKeyThes = "59a05a64-94df-4983-a3b0-a691ea99fcdb"
+    static var apiKeyDict: String {
+        return getValue(for: .Dictionary)
+    }
+
+    static var apiKeyThes: String {
+        return getValue(for: .Thesaurus)
+    }
+
+    static var apiKeyGiphy: String {
+        return getValue(for: .Giphy)
+    }
+    
+    private static func getValue(for service: Service) -> String {
+        let keyName = service.rawValue
+        
+        guard let filePath = Bundle.main.path(forResource: "Config", ofType: "plist"),
+              let plist = NSDictionary(contentsOfFile: filePath),
+              let value = plist.object(forKey: keyName) as? String else {
+            fatalError("Couldn't find key \(keyName) in config.plist")
+        }
+        return value
+    }
 }

@@ -7,22 +7,26 @@
 
 import Foundation
 
+struct HeadwordInfo: Codable {
+    let hw: String
+}
 
 struct WordResponse: Codable {
     let meta: Meta
     let shortdef: [String]
+    let hwi: HeadwordInfo
+    let fl: String
     
     var word: Word {
-        return Word(text: meta.stems.first!, definitions: shortdef)
+        return Word(id: meta.id, text: hwi.hw, definitions: shortdef, functionalLabel: fl)
     }
     
-    static func parseData(_ data: Data) -> WordResponse? {
-        do {
-            let response = try JSONDecoder().decode([WordResponse].self, from: data)
-            return response.first
-        } catch {
-            print("WORD RESPONSE ERROR: ", error.localizedDescription)
+    static func word(from data: Data) throws -> [WordResponse]? {
+        guard let firstWordDefinition = try JSONDecoder().decode([WordResponse].self, from: data).first else {
+            return nil
         }
-        return nil
+        
+        //keep it as an array because you could easily modify this to return an array of definitions for a word
+        return [firstWordDefinition]
     }
 }
