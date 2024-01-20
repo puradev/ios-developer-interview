@@ -1,13 +1,13 @@
 //
-//  SampleAppUITestsLaunchTests.swift
-//  SampleAppUITests
+//  PuraDictionaryUITestsLaunchTests.swift
+//  PuraDictionaryUITests
 //
 //  Created by natehancock on 6/28/22.
 //
 
 import XCTest
 
-class SampleAppUITestsLaunchTests: XCTestCase {
+class PuraDictionaryUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

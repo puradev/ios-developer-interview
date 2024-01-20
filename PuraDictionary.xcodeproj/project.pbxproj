@@ -13,9 +13,9 @@
 		06A89801286BEBA500F773B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A897FF286BEBA500F773B5 /* Main.storyboard */; };
 		06A89803286BEBA600F773B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A89802286BEBA600F773B5 /* Assets.xcassets */; };
 		06A89806286BEBA600F773B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */; };
-		06A89811286BEBA600F773B5 /* SampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89810286BEBA600F773B5 /* SampleAppTests.swift */; };
-		06A8981B286BEBA600F773B5 /* SampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8981A286BEBA600F773B5 /* SampleAppUITests.swift */; };
-		06A8981D286BEBA600F773B5 /* SampleAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8981C286BEBA600F773B5 /* SampleAppUITestsLaunchTests.swift */; };
+		06A89811286BEBA600F773B5 /* PuraDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89810286BEBA600F773B5 /* PuraDictionaryTests.swift */; };
+		06A8981B286BEBA600F773B5 /* PuraDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8981A286BEBA600F773B5 /* PuraDictionaryUITests.swift */; };
+		06A8981D286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8981C286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift */; };
 		06A8982A286BEECA00F773B5 /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89829286BEECA00F773B5 /* Tokens.swift */; };
 		06A8982C286BF00800F773B5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8982B286BF00800F773B5 /* API.swift */; };
 		06A8982E286BF07B00F773B5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8982D286BF07B00F773B5 /* Word.swift */; };
@@ -44,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06A897F6286BEBA500F773B5 /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A897F6286BEBA500F773B5 /* PuraDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuraDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A897F9286BEBA500F773B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A897FB286BEBA500F773B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		06A897FD286BEBA500F773B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,11 +52,11 @@
 		06A89802286BEBA600F773B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06A89805286BEBA600F773B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06A89807286BEBA600F773B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06A8980C286BEBA600F773B5 /* SampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A89810286BEBA600F773B5 /* SampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppTests.swift; sourceTree = "<group>"; };
-		06A89816286BEBA600F773B5 /* SampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A8981A286BEBA600F773B5 /* SampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITests.swift; sourceTree = "<group>"; };
-		06A8981C286BEBA600F773B5 /* SampleAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		06A8980C286BEBA600F773B5 /* PuraDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuraDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A89810286BEBA600F773B5 /* PuraDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuraDictionaryTests.swift; sourceTree = "<group>"; };
+		06A89816286BEBA600F773B5 /* PuraDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuraDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A8981A286BEBA600F773B5 /* PuraDictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuraDictionaryUITests.swift; sourceTree = "<group>"; };
+		06A8981C286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuraDictionaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		06A89829286BEECA00F773B5 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
 		06A8982B286BF00800F773B5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		06A8982D286BF07B00F773B5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
@@ -116,9 +116,9 @@
 		06A897ED286BEBA500F773B5 = {
 			isa = PBXGroup;
 			children = (
-				06A897F8286BEBA500F773B5 /* SampleApp */,
-				06A8980F286BEBA600F773B5 /* SampleAppTests */,
-				06A89819286BEBA600F773B5 /* SampleAppUITests */,
+				06A897F8286BEBA500F773B5 /* PuraDictionary */,
+				06A8980F286BEBA600F773B5 /* PuraDictionaryTests */,
+				06A89819286BEBA600F773B5 /* PuraDictionaryUITests */,
 				06A897F7286BEBA500F773B5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,14 +126,14 @@
 		06A897F7286BEBA500F773B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06A897F6286BEBA500F773B5 /* SampleApp.app */,
-				06A8980C286BEBA600F773B5 /* SampleAppTests.xctest */,
-				06A89816286BEBA600F773B5 /* SampleAppUITests.xctest */,
+				06A897F6286BEBA500F773B5 /* PuraDictionary.app */,
+				06A8980C286BEBA600F773B5 /* PuraDictionaryTests.xctest */,
+				06A89816286BEBA600F773B5 /* PuraDictionaryUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		06A897F8286BEBA500F773B5 /* SampleApp */ = {
+		06A897F8286BEBA500F773B5 /* PuraDictionary */ = {
 			isa = PBXGroup;
 			children = (
 				06A897F9286BEBA500F773B5 /* AppDelegate.swift */,
@@ -147,32 +147,32 @@
 				06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */,
 				06A89807286BEBA600F773B5 /* Info.plist */,
 			);
-			path = SampleApp;
+			path = PuraDictionary;
 			sourceTree = "<group>";
 		};
-		06A8980F286BEBA600F773B5 /* SampleAppTests */ = {
+		06A8980F286BEBA600F773B5 /* PuraDictionaryTests */ = {
 			isa = PBXGroup;
 			children = (
-				06A89810286BEBA600F773B5 /* SampleAppTests.swift */,
+				06A89810286BEBA600F773B5 /* PuraDictionaryTests.swift */,
 			);
-			path = SampleAppTests;
+			path = PuraDictionaryTests;
 			sourceTree = "<group>";
 		};
-		06A89819286BEBA600F773B5 /* SampleAppUITests */ = {
+		06A89819286BEBA600F773B5 /* PuraDictionaryUITests */ = {
 			isa = PBXGroup;
 			children = (
-				06A8981A286BEBA600F773B5 /* SampleAppUITests.swift */,
-				06A8981C286BEBA600F773B5 /* SampleAppUITestsLaunchTests.swift */,
+				06A8981A286BEBA600F773B5 /* PuraDictionaryUITests.swift */,
+				06A8981C286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift */,
 			);
-			path = SampleAppUITests;
+			path = PuraDictionaryUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		06A897F5286BEBA500F773B5 /* SampleApp */ = {
+		06A897F5286BEBA500F773B5 /* PuraDictionary */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06A89820286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "SampleApp" */;
+			buildConfigurationList = 06A89820286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "PuraDictionary" */;
 			buildPhases = (
 				06A897F2286BEBA500F773B5 /* Sources */,
 				06A897F3286BEBA500F773B5 /* Frameworks */,
@@ -182,14 +182,14 @@
 			);
 			dependencies = (
 			);
-			name = SampleApp;
+			name = PuraDictionary;
 			productName = SampleApp;
-			productReference = 06A897F6286BEBA500F773B5 /* SampleApp.app */;
+			productReference = 06A897F6286BEBA500F773B5 /* PuraDictionary.app */;
 			productType = "com.apple.product-type.application";
 		};
-		06A8980B286BEBA600F773B5 /* SampleAppTests */ = {
+		06A8980B286BEBA600F773B5 /* PuraDictionaryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06A89823286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "SampleAppTests" */;
+			buildConfigurationList = 06A89823286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "PuraDictionaryTests" */;
 			buildPhases = (
 				06A89808286BEBA600F773B5 /* Sources */,
 				06A89809286BEBA600F773B5 /* Frameworks */,
@@ -200,14 +200,14 @@
 			dependencies = (
 				06A8980E286BEBA600F773B5 /* PBXTargetDependency */,
 			);
-			name = SampleAppTests;
+			name = PuraDictionaryTests;
 			productName = SampleAppTests;
-			productReference = 06A8980C286BEBA600F773B5 /* SampleAppTests.xctest */;
+			productReference = 06A8980C286BEBA600F773B5 /* PuraDictionaryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		06A89815286BEBA600F773B5 /* SampleAppUITests */ = {
+		06A89815286BEBA600F773B5 /* PuraDictionaryUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06A89826286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "SampleAppUITests" */;
+			buildConfigurationList = 06A89826286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "PuraDictionaryUITests" */;
 			buildPhases = (
 				06A89812286BEBA600F773B5 /* Sources */,
 				06A89813286BEBA600F773B5 /* Frameworks */,
@@ -218,9 +218,9 @@
 			dependencies = (
 				06A89818286BEBA600F773B5 /* PBXTargetDependency */,
 			);
-			name = SampleAppUITests;
+			name = PuraDictionaryUITests;
 			productName = SampleAppUITests;
-			productReference = 06A89816286BEBA600F773B5 /* SampleAppUITests.xctest */;
+			productReference = 06A89816286BEBA600F773B5 /* PuraDictionaryUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 06A897F1286BEBA500F773B5 /* Build configuration list for PBXProject "SampleApp" */;
+			buildConfigurationList = 06A897F1286BEBA500F773B5 /* Build configuration list for PBXProject "PuraDictionary" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,9 +259,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				06A897F5286BEBA500F773B5 /* SampleApp */,
-				06A8980B286BEBA600F773B5 /* SampleAppTests */,
-				06A89815286BEBA600F773B5 /* SampleAppUITests */,
+				06A897F5286BEBA500F773B5 /* PuraDictionary */,
+				06A8980B286BEBA600F773B5 /* PuraDictionaryTests */,
+				06A89815286BEBA600F773B5 /* PuraDictionaryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -316,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06A89811286BEBA600F773B5 /* SampleAppTests.swift in Sources */,
+				06A89811286BEBA600F773B5 /* PuraDictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,8 +324,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06A8981D286BEBA600F773B5 /* SampleAppUITestsLaunchTests.swift in Sources */,
-				06A8981B286BEBA600F773B5 /* SampleAppUITests.swift in Sources */,
+				06A8981D286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift in Sources */,
+				06A8981B286BEBA600F773B5 /* PuraDictionaryUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,12 +334,12 @@
 /* Begin PBXTargetDependency section */
 		06A8980E286BEBA600F773B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 06A897F5286BEBA500F773B5 /* SampleApp */;
+			target = 06A897F5286BEBA500F773B5 /* PuraDictionary */;
 			targetProxy = 06A8980D286BEBA600F773B5 /* PBXContainerItemProxy */;
 		};
 		06A89818286BEBA600F773B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 06A897F5286BEBA500F773B5 /* SampleApp */;
+			target = 06A897F5286BEBA500F773B5 /* PuraDictionary */;
 			targetProxy = 06A89817286BEBA600F773B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -485,9 +485,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5R395K5VP8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleApp/Info.plist;
+				INFOPLIST_FILE = PuraDictionary/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pura Dictionary";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -498,7 +499,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.SampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pura.dictionaryapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -513,9 +514,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5R395K5VP8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleApp/Info.plist;
+				INFOPLIST_FILE = PuraDictionary/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pura Dictionary";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -526,7 +528,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.SampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pura.dictionaryapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -545,12 +547,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.SampleAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.PuraDictionaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PuraDictionary.app/PuraDictionary";
 			};
 			name = Debug;
 		};
@@ -565,12 +567,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.SampleAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.PuraDictionaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PuraDictionary.app/PuraDictionary";
 			};
 			name = Release;
 		};
@@ -583,12 +585,12 @@
 				DEVELOPMENT_TEAM = 3XU8MWPJTL;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.SampleAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.PuraDictionaryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SampleApp;
+				TEST_TARGET_NAME = PuraDictionary;
 			};
 			name = Debug;
 		};
@@ -601,19 +603,19 @@
 				DEVELOPMENT_TEAM = 3XU8MWPJTL;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.SampleAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = Pura.scents.PuraDictionaryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SampleApp;
+				TEST_TARGET_NAME = PuraDictionary;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06A897F1286BEBA500F773B5 /* Build configuration list for PBXProject "SampleApp" */ = {
+		06A897F1286BEBA500F773B5 /* Build configuration list for PBXProject "PuraDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06A8981E286BEBA600F773B5 /* Debug */,
@@ -622,7 +624,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06A89820286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
+		06A89820286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "PuraDictionary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06A89821286BEBA600F773B5 /* Debug */,
@@ -631,7 +633,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06A89823286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "SampleAppTests" */ = {
+		06A89823286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "PuraDictionaryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06A89824286BEBA600F773B5 /* Debug */,
@@ -640,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06A89826286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "SampleAppUITests" */ = {
+		06A89826286BEBA600F773B5 /* Build configuration list for PBXNativeTarget "PuraDictionaryUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06A89827286BEBA600F773B5 /* Debug */,

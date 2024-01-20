@@ -1,14 +1,14 @@
 //
-//  SampleAppTests.swift
-//  SampleAppTests
+//  PuraDictionaryTests.swift
+//  PuraDictionaryTests
 //
 //  Created by natehancock on 6/28/22.
 //
 
 import XCTest
-@testable import SampleApp
+@testable import PuraDictionary
 
-class SampleAppTests: XCTestCase {
+class PuraDictionaryTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
