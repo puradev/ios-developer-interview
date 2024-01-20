@@ -26,6 +26,8 @@
 		06A8983C286C168800F773B5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8983B286C168800F773B5 /* Meta.swift */; };
 		B55D2C452B5C34BD007491E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D2C442B5C34BD007491E9 /* ContentView.swift */; };
 		B55D2C472B5C34FF007491E9 /* SampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D2C462B5C34FF007491E9 /* SampleApp.swift */; };
+		B55D2C492B5C7C3D007491E9 /* WordRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D2C482B5C7C3D007491E9 /* WordRowItemView.swift */; };
+		B55D2C4B2B5C848D007491E9 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D2C4A2B5C848D007491E9 /* WordDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		06A8983B286C168800F773B5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		B55D2C442B5C34BD007491E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B55D2C462B5C34FF007491E9 /* SampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp.swift; sourceTree = "<group>"; };
+		B55D2C482B5C7C3D007491E9 /* WordRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRowItemView.swift; sourceTree = "<group>"; };
+		B55D2C4A2B5C848D007491E9 /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,8 @@
 			children = (
 				B55D2C442B5C34BD007491E9 /* ContentView.swift */,
 				B55D2C462B5C34FF007491E9 /* SampleApp.swift */,
+				B55D2C482B5C7C3D007491E9 /* WordRowItemView.swift */,
+				B55D2C4A2B5C848D007491E9 /* WordDetailView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				B55D2C472B5C34FF007491E9 /* SampleApp.swift in Sources */,
 				06A897FE286BEBA500F773B5 /* ViewController.swift in Sources */,
 				06A897FA286BEBA500F773B5 /* AppDelegate.swift in Sources */,
+				B55D2C492B5C7C3D007491E9 /* WordRowItemView.swift in Sources */,
 				06A89836286C071200F773B5 /* URLBuilder.swift in Sources */,
 				06A8983C286C168800F773B5 /* Meta.swift in Sources */,
 				06A8982E286BF07B00F773B5 /* Word.swift in Sources */,
@@ -331,6 +338,7 @@
 				06A89832286BF3D200F773B5 /* APIError.swift in Sources */,
 				06A8982A286BEECA00F773B5 /* Tokens.swift in Sources */,
 				B55D2C452B5C34BD007491E9 /* ContentView.swift in Sources */,
+				B55D2C4B2B5C848D007491E9 /* WordDetailView.swift in Sources */,
 				06A89838286C0FFC00F773B5 /* TableViewDataSource.swift in Sources */,
 				06A8982C286BF00800F773B5 /* API.swift in Sources */,
 			);

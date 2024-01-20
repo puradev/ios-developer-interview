@@ -9,61 +9,61 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var userInput: String = ""
-    @State private var wordDefinitions: [String : String] = [:]
+    @State private var wordDefinitions: [Word] = []
     @State private var isApiCallInProgress: Bool = false
     @State private var presentEmptyDefinitionAlert: Bool = false
     @State private var presentApiFailureAlert: Bool = false
     
     var body: some View {
-        VStack(alignment: .leading) {
-            // Header
-            VStack(alignment: .leading, spacing: 15) {
-                Text("Dictionary")
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                
-                
-                Text("Enter a word below, and see the definition!")
-            } //: VStack
-            .padding(.bottom, 40)
+        NavigationView {
             
-            HStack {
-                // Text Entry
-                TextField("", text: $userInput, prompt: Text("Enter here"))
-                    .textFieldStyle(.roundedBorder)
-                    .autocorrectionDisabled()
+            VStack(alignment: .leading) {
+                // Header
+                VStack(alignment: .leading, spacing: 15) {
+                    Text("Dictionary")
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                    
+                    
+                    Text("Enter a word below, and see the definition!")
+                } //: VStack
+                .padding(.bottom, 40)
                 
-                // Submit Button
-                Button("Submit") {
-                    isApiCallInProgress = true
-                    print(userInput)
-                    fetchWordDefinition(with: userInput)
+                HStack {
+                    // Text Entry
+                    TextField("", text: $userInput, prompt: Text("Enter here"))
+                        .textFieldStyle(.roundedBorder)
+                        .autocorrectionDisabled()
+                    
+                    // Submit Button
+                    Button("Submit") {
+                        isApiCallInProgress = true
+                        print(userInput)
+                        fetchWordDefinition(with: userInput)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(isApiCallInProgress)
                 }
-                .buttonStyle(.borderedProminent)
-                .disabled(isApiCallInProgress)
-            }
-
-            // Results List
-            List {
-                ForEach(Array(wordDefinitions.keys), id: \.self) { word in
-                    VStack(alignment: .leading) {
-                        Text(word)
-                            .fontWeight(.heavy)
-                            .padding(.bottom, 5)
-                        Text(wordDefinitions[word] ?? "")
+                
+                // Results List
+                List {
+                    ForEach(wordDefinitions) { word in
+                        NavigationLink(destination: WordDetailView(word: word)) {
+                            WordRowItemView(word: word)
+                        }
                     }
                 }
+                
+            } //: VStack
+            .padding(15)
+            .alert("No definition found, please try again", isPresented: $presentEmptyDefinitionAlert) {
+                Button("Ok", action: {
+                    userInput = ""
+                })
             }
-            
-        } //: VStack
-        .padding(15)
-        .alert("No definition found, please try again", isPresented: $presentEmptyDefinitionAlert) {
-            Button("Ok", action: {
-                userInput = ""
-            })
-        }
-        .alert("API failure, please try again", isPresented: $presentApiFailureAlert) {
-            Button("Ok", action: {})
+            .alert("API failure, please try again", isPresented: $presentApiFailureAlert) {
+                Button("Ok", action: {})
+            }
         }
     }
     
@@ -73,21 +73,24 @@ struct ContentView: View {
             case .success(let data):
                 guard let r = WordResponse.parseData(data) else {
                     presentEmptyDefinitionAlert = true
+                    isApiCallInProgress = false
                     return
                 }
                 
                 let definition = r.shortdef[0]
                 guard !definition.isEmpty else {
                     presentEmptyDefinitionAlert = true
+                    isApiCallInProgress = false
                     return
                 }
-                self.wordDefinitions[userInput] = definition
+                self.wordDefinitions.append(r.word)
+                isApiCallInProgress = false
                 
             case .failure(let error):
                 presentApiFailureAlert = true
+                isApiCallInProgress = false
                 print("NETWORK ERROR: ", error.localizedDescription)
             }
-            isApiCallInProgress = false
         }
     }
 }

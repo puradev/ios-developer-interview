@@ -8,9 +8,17 @@
 import Foundation
 
 
-struct Word: Codable {
+struct Word: Codable, Identifiable {
+    var id = UUID()
     var text: String
     var definitions: [String]
+    var hasMultipleDefinitions: Bool {
+        if definitions.count > 1 {
+            return true
+        } else {
+            return false
+        }
+    }
     
     
 //    static func parseData(_ data: Data) -> Word {
