@@ -25,7 +25,7 @@ struct WordDetailView: View {
                     Text(definition)
                 }
             }
-        }
+        } //: VStack
     }
 }
 

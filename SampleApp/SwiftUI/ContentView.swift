@@ -17,7 +17,6 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            
             VStack(alignment: .leading) {
                 // Header
                 VStack(alignment: .leading, spacing: 15) {
@@ -72,7 +71,7 @@ struct ContentView: View {
             .alert("Numbers, special characters, and spaces aren't permitted, please try again", isPresented: $presentInvalidInputAlert) {
                 Button("Ok", action: {})
             }
-        }
+        } //: NavigationView
     }
     
     func isInputValid() -> Bool {
@@ -87,19 +86,19 @@ struct ContentView: View {
         API.shared.fetchWord(query: userInput) { response in
             switch response {
             case .success(let data):
-                guard let r = WordResponse.parseData(data) else {
+                guard let response = WordResponse.parseData(data) else {
                     presentEmptyDefinitionAlert = true
                     isApiCallInProgress = false
                     return
                 }
                 
-                let definition = r.shortdef[0]
+                let definition = response.shortdef[0]
                 guard !definition.isEmpty else {
                     presentEmptyDefinitionAlert = true
                     isApiCallInProgress = false
                     return
                 }
-                self.wordDefinitions.append(r.word)
+                self.wordDefinitions.append(response.word)
                 isApiCallInProgress = false
                 
             case .failure(let error):
