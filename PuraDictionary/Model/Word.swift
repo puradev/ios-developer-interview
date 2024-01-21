@@ -29,11 +29,11 @@ struct Word: Codable, Hashable {
     
     //Thesaurus - Synonym and Antonym helpers
     func synonymsForShortDefIndex(index: Int) -> String {
-        guard let syns = meta.syns, !syns.isEmpty, let defSyns = syns[index], !defSyns.isEmpty else { return "" }
+        guard let syns = meta.syns, syns.count > index, let defSyns = syns[index], !defSyns.isEmpty else { return "" }
         return defSyns.joined(separator: ", ")
     }
     func antonymsForShortDefIndex(index: Int) -> String {
-        guard let ants = meta.ants, !ants.isEmpty, let defAnts = ants[index], !defAnts.isEmpty else { return "" }
+        guard let ants = meta.ants, ants.count > index, let defAnts = ants[index], !defAnts.isEmpty else { return "" }
         return defAnts.joined(separator: ", ")
     }
     
