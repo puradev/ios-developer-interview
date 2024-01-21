@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct Meta: Codable {
+struct Meta: Codable, Hashable {
     let id: String
     let uuid: String
-    let sort: String
+    let sort: String?
     let stems: [String]
     let offensive: Bool
+    let syns: [[String]?]? // Thesaurus
+    let ants: [[String]?]? // Thesaurus
 }

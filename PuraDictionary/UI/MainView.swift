@@ -26,7 +26,8 @@ struct MainView: View {
                     searchBar
                         .onSubmit {
                             if !model.searchText.isEmpty {
-                                model.fetchWordFromDictionary()
+                                model.fetchWord()
+                                model.fetchThesaurus()
                             }
                         }
                     
@@ -40,8 +41,8 @@ struct MainView: View {
                 .padding()
                 
                 .navigationDestination(isPresented: $model.showWord) {
-                    if let wordResponse = model.wordResponse {
-                        WordView(wordResponse: wordResponse)
+                    if let dictionaryWords = model.dictionaryWords, let thesaurusWords = model.thesaurusWords {
+                        WordView(dictionaryWords: dictionaryWords, thesaurusWords: thesaurusWords)
                     }
                 }
                 

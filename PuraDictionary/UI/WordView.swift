@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct WordView: View {
-    var wordResponse: WordResponse
+    var dictionaryWords: [Word]
+    var thesaurusWords: [Word]
     
     @State private var mode = 0
     @Environment(\.colorScheme) var colorScheme
-
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack {
             Picker("", selection: $mode) {
                 Text("Dictionary").tag(0)
                 Text("Thesaurus").tag(1)
@@ -22,37 +23,11 @@ struct WordView: View {
             .pickerStyle(.segmented)
             .padding()
             
-            Text(wordResponse.word.text)
-                .font(.largeTitle)
-                .padding(.leading)
-            
-            
-            Text(wordResponse.fl)
-                .font(.title2)
-                .italic()
-                .padding(.leading)
-            
-            Text(wordResponse.meta.stems.joined(separator: "; "))
-                .font(.caption)
-                .fontWeight(.bold)
-                .padding(.bottom)
-                .padding(.leading)
-            
-            Text("Definitions")
-                .font(.title3)
-                .padding(.leading)
-            
-            List(wordResponse.word.definitions, id: \.self) { def in
-                Text("- " + def)
-                    .listRowBackground(Color.clear)
-                    .padding(.top)
-                    .padding(.bottom)
-                    .listRowSeparatorTint(colorScheme == .light ? .black : .gray)
+            if mode == 0 {
+                dictionaryView
+            } else {
+                thesaurusView
             }
-            .padding(.top, -25)
-            .listStyle(.grouped)
-            .listRowBackground(Color.clear)
-            .scrollContentBackground(.hidden)
         }
         .navigationBarTitle("", displayMode: .inline)
         .background {
@@ -63,8 +38,107 @@ struct WordView: View {
             }
         }
     }
+    
+    var dictionaryView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(dictionaryWords.first?.title() ?? "")
+                .font(.largeTitle)
+                .padding(.leading)
+            
+            List(dictionaryWords, id: \.self) { word in
+                
+                dictionaryCard(word: word)
+                    .listRowBackground(Color.clear)
+                    .padding(.top)
+                    .padding(.bottom)
+                    .listRowSeparatorTint(colorScheme == .light ? .black : .gray)
+            }
+            .listStyle(.grouped)
+            .listRowBackground(Color.clear)
+            .scrollContentBackground(.hidden)
+        }
+    }
+    
+    func dictionaryCard(word: Word) -> some View {
+        VStack(alignment: .leading) {
+            Text(word.fl)
+                .font(.title2)
+                .italic()
+            
+            Text(word.meta.stems.joined(separator: "; "))
+                .font(.caption)
+                .fontWeight(.bold)
+                .padding(.bottom)
+            
+            Text("Definitions")
+                .font(.title3)
+            ForEach(word.shortdef, id: \.self) { def in
+                Text("- " + def)
+                    .padding(.bottom)
+                
+            }
+        }
+    }
+    
+    var thesaurusView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(thesaurusWords.first?.title() ?? "")
+                .font(.largeTitle)
+                .padding(.leading)
+            
+            List(thesaurusWords, id: \.self) { word in
+                
+                thesaurusCard(word: word)
+                    .listRowBackground(Color.clear)
+                    .padding(.top)
+                    .padding(.bottom)
+                    .listRowSeparatorTint(colorScheme == .light ? .black : .gray)
+            }
+            .listStyle(.grouped)
+            .listRowBackground(Color.clear)
+            .scrollContentBackground(.hidden)
+        }
+    }
+    
+    func thesaurusCard(word: Word) -> some View {
+        VStack(alignment: .leading) {
+            Text(word.fl)
+                .font(.title2)
+                .italic()
+            
+            
+            ForEach(0..<word.shortdef.count, id: \.self) { i in
+                
+                Text("- " + word.shortdef[i])
+                let synonymText = word.synonymsForShortDefIndex(index: i)
+                if synonymText != "" {
+                    Text("Synonyms")
+                        .padding(.leading)
+                        .fontWeight(.bold)
+                    
+                    Text(word.synonymsForShortDefIndex(index: i))
+                        .italic()
+                        .padding(.bottom)
+                        .padding(.leading)
+                }
+                
+                let antonymText = word.antonymsForShortDefIndex(index: i)
+                if antonymText != "" {
+                    Text("Antonyms")
+                        .padding(.leading)
+                        .fontWeight(.bold)
+                    
+                    Text(word.antonymsForShortDefIndex(index: i))
+                        .italic()
+                        .padding(.bottom)
+                        .padding(.leading)
+                }
+            }
+        }
+    }
 }
 
 #Preview {
-    WordView(wordResponse: WordResponse(meta: Meta(id: "test:1", uuid: "0e5228e3-40df-4dce-92e0-36748eb1c24c", sort: "200122700", stems: ["test", "tests"], offensive: false), shortdef: ["a means of testing: such as", "something (such as a series of questions or exercises) for measuring the skill, knowledge, intelligence, capacities, or aptitudes of an individual or group", "a procedure, reaction, or reagent used to identify or characterize a substance or constituent"], fl: "verb"))
+    WordView(dictionaryWords: [Word(meta: Meta(id: "test:1", uuid: "0e5228e3-40df-4dce-92e0-36748eb1c24c", sort: "200122700", stems: ["test", "tests"], offensive: false, syns: [], ants: []), shortdef: ["a means of testing: such as", "something (such as a series of questions or exercises) for measuring the skill, knowledge, intelligence, capacities, or aptitudes of an individual or group", "a procedure, reaction, or reagent used to identify or characterize a substance or constituent"], fl: "verb"), Word(meta: Meta(id: "test:1", uuid: "0e5228e3-40df-4dce-92e0-36748eb1c24c", sort: "200122700", stems: ["test", "tests"], offensive: false, syns: [], ants: []), shortdef: ["a means of testing: such as", "something (such as a series of questions or exercises) for measuring the skill, knowledge, intelligence, capacities, or aptitudes of an individual or group", "a procedure, reaction, or reagent used to identify or characterize a substance or constituent"], fl: "verb"), Word(meta: Meta(id: "test:1", uuid: "0e5228e3-40df-4dce-92e0-36748eb1c24c", sort: "200122700", stems: ["test", "tests"], offensive: false, syns: [], ants: []), shortdef: ["a means of testing: such as", "something (such as a series of questions or exercises) for measuring the skill, knowledge, intelligence, capacities, or aptitudes of an individual or group", "a procedure, reaction, or reagent used to identify or characterize a substance or constituent"], fl: "verb")], thesaurusWords: [Word(meta: Meta(id: "test:1", uuid: "0e5228e3-40df-4dce-92e0-36748eb1c24c", sort: nil, stems: ["test", "tests"], offensive: false, syns: [["Sample", "Try Out"], ["Strain", "Stretch", "Tax", "Try"],  ["Strain", "Stretch", "Tax", "Try"]], ants: [["Sample", "Try Out"], ["Strain", "Stretch", "Tax", "Try"], ["Strain", "Stretch", "Tax", "Try"]]), shortdef: ["a means of testing: such as", "something (such as a series of questions or exercises) for measuring the skill, knowledge, intelligence, capacities, or aptitudes of an individual or group", "a procedure, reaction, or reagent used to identify or characterize a substance or constituent"], fl: "verb"),Word(meta: Meta(id: "test:1", uuid: "0e5228e3-40df-4dce-92e0-36748eb1c24c", sort: nil, stems: ["test", "tests"], offensive: false, syns: [["Sample", "Try Out", "Try Out"], ["Strain", "Stretch", "Tax", "Try"],  ["Strain", "Stretch", "Tax", "Try"]], ants: [["Sample", "Try Out"], ["Strain", "Stretch", "Tax", "Try"], ["Strain", "Stretch", "Tax", "Try"]]), shortdef: ["a means of testing: such as", "something (such as a series of questions or exercises) for measuring the skill, knowledge, intelligence, capacities, or aptitudes of an individual or group", "a procedure, reaction, or reagent used to identify or characterize a substance or constituent"], fl: "verb"), Word(meta: Meta(id: "test:1", uuid: "0e5228e3-40df-4dce-92e0-36748eb1c24c", sort: nil, stems: ["test", "tests"], offensive: false, syns: [["Sample", "Try Out", "Try Out"], ["Strain", "Stretch", "Tax", "Try"],  ["Strain", "Stretch", "Tax", "Try"]], ants: [["Sample", "Try Out"], ["Strain", "Stretch", "Tax", "Try"], ["Strain", "Stretch", "Tax", "Try"]]), shortdef: ["a means of testing: such as", "something (such as a series of questions or exercises) for measuring the skill, knowledge, intelligence, capacities, or aptitudes of an individual or group", "a procedure, reaction, or reagent used to identify or characterize a substance or constituent"], fl: "verb")])
+    
 }
