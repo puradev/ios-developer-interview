@@ -11,6 +11,7 @@ import Foundation
 struct WordResponse: Codable {
     let meta: Meta
     let shortdef: [String]
+    let fl: String //Noun, Verb etc.
     
     var word: Word {
         return Word(text: meta.stems.first!, definitions: shortdef)

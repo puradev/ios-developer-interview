@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06A897FA286BEBA500F773B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A897F9286BEBA500F773B5 /* AppDelegate.swift */; };
-		06A897FC286BEBA500F773B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A897FB286BEBA500F773B5 /* SceneDelegate.swift */; };
-		06A897FE286BEBA500F773B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A897FD286BEBA500F773B5 /* ViewController.swift */; };
-		06A89801286BEBA500F773B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A897FF286BEBA500F773B5 /* Main.storyboard */; };
 		06A89803286BEBA600F773B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A89802286BEBA600F773B5 /* Assets.xcassets */; };
-		06A89806286BEBA600F773B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */; };
 		06A89811286BEBA600F773B5 /* PuraDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89810286BEBA600F773B5 /* PuraDictionaryTests.swift */; };
 		06A8981B286BEBA600F773B5 /* PuraDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8981A286BEBA600F773B5 /* PuraDictionaryUITests.swift */; };
 		06A8981D286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8981C286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift */; };
@@ -21,9 +16,13 @@
 		06A8982E286BF07B00F773B5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8982D286BF07B00F773B5 /* Word.swift */; };
 		06A89832286BF3D200F773B5 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89831286BF3D200F773B5 /* APIError.swift */; };
 		06A89836286C071200F773B5 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89835286C071200F773B5 /* URLBuilder.swift */; };
-		06A89838286C0FFC00F773B5 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */; };
 		06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89839286C165A00F773B5 /* WordResponse.swift */; };
-		06A8983C286C168800F773B5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8983B286C168800F773B5 /* Meta.swift */; };
+		1C5FA3AC2B5CA78900FAABCC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5FA3AB2B5CA78900FAABCC /* Launch Screen.storyboard */; };
+		1C5FA3B02B5CAEDF00FAABCC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA3AF2B5CAEDF00FAABCC /* ViewModel.swift */; };
+		1C5FA3B32B5CB62900FAABCC /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA3B22B5CB62900FAABCC /* WordView.swift */; };
+		1C5FA3B72B5CE36B00FAABCC /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA3B62B5CE36B00FAABCC /* Meta.swift */; };
+		1CF96F4A2B5C7E83000E6B73 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF96F492B5C7E83000E6B73 /* MainView.swift */; };
+		1CF96F882B5C8863000E6B73 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF96F872B5C8863000E6B73 /* App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +44,7 @@
 
 /* Begin PBXFileReference section */
 		06A897F6286BEBA500F773B5 /* PuraDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuraDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A897F9286BEBA500F773B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		06A897FB286BEBA500F773B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		06A897FD286BEBA500F773B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		06A89800286BEBA500F773B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06A89802286BEBA600F773B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		06A89805286BEBA600F773B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		06A89807286BEBA600F773B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06A8980C286BEBA600F773B5 /* PuraDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuraDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A89810286BEBA600F773B5 /* PuraDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuraDictionaryTests.swift; sourceTree = "<group>"; };
 		06A89816286BEBA600F773B5 /* PuraDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PuraDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,9 +55,13 @@
 		06A8982D286BF07B00F773B5 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		06A89831286BF3D200F773B5 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		06A89835286C071200F773B5 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
-		06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		06A89839286C165A00F773B5 /* WordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordResponse.swift; sourceTree = "<group>"; };
-		06A8983B286C168800F773B5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		1C5FA3AB2B5CA78900FAABCC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1C5FA3AF2B5CAEDF00FAABCC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1C5FA3B22B5CB62900FAABCC /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		1C5FA3B62B5CE36B00FAABCC /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		1CF96F492B5C7E83000E6B73 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1CF96F872B5C8863000E6B73 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +103,9 @@
 		062E352F286CC5B10072B38E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				06A8982D286BF07B00F773B5 /* Word.swift */,
 				06A89839286C165A00F773B5 /* WordResponse.swift */,
-				06A8983B286C168800F773B5 /* Meta.swift */,
+				06A8982D286BF07B00F773B5 /* Word.swift */,
+				1C5FA3B62B5CE36B00FAABCC /* Meta.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,16 +133,12 @@
 		06A897F8286BEBA500F773B5 /* PuraDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				06A897F9286BEBA500F773B5 /* AppDelegate.swift */,
-				06A897FB286BEBA500F773B5 /* SceneDelegate.swift */,
-				06A897FD286BEBA500F773B5 /* ViewController.swift */,
-				06A897FF286BEBA500F773B5 /* Main.storyboard */,
-				06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */,
+				1CF96F872B5C8863000E6B73 /* App.swift */,
+				1CF96F4B2B5C7E95000E6B73 /* UI */,
 				062E352E286CC5950072B38E /* API */,
 				062E352F286CC5B10072B38E /* Model */,
 				06A89802286BEBA600F773B5 /* Assets.xcassets */,
-				06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */,
-				06A89807286BEBA600F773B5 /* Info.plist */,
+				1C5FA3AB2B5CA78900FAABCC /* Launch Screen.storyboard */,
 			);
 			path = PuraDictionary;
 			sourceTree = "<group>";
@@ -165,6 +158,16 @@
 				06A8981C286BEBA600F773B5 /* PuraDictionaryUITestsLaunchTests.swift */,
 			);
 			path = PuraDictionaryUITests;
+			sourceTree = "<group>";
+		};
+		1CF96F4B2B5C7E95000E6B73 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1CF96F492B5C7E83000E6B73 /* MainView.swift */,
+				1C5FA3B22B5CB62900FAABCC /* WordView.swift */,
+				1C5FA3AF2B5CAEDF00FAABCC /* ViewModel.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +234,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					06A897F5286BEBA500F773B5 = {
 						CreatedOnToolsVersion = 13.4;
@@ -271,9 +274,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06A89806286BEBA600F773B5 /* LaunchScreen.storyboard in Resources */,
+				1C5FA3AC2B5CA78900FAABCC /* Launch Screen.storyboard in Resources */,
 				06A89803286BEBA600F773B5 /* Assets.xcassets in Resources */,
-				06A89801286BEBA500F773B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,17 +300,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF96F882B5C8863000E6B73 /* App.swift in Sources */,
 				06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */,
-				06A897FE286BEBA500F773B5 /* ViewController.swift in Sources */,
-				06A897FA286BEBA500F773B5 /* AppDelegate.swift in Sources */,
+				1CF96F4A2B5C7E83000E6B73 /* MainView.swift in Sources */,
 				06A89836286C071200F773B5 /* URLBuilder.swift in Sources */,
-				06A8983C286C168800F773B5 /* Meta.swift in Sources */,
 				06A8982E286BF07B00F773B5 /* Word.swift in Sources */,
-				06A897FC286BEBA500F773B5 /* SceneDelegate.swift in Sources */,
 				06A89832286BF3D200F773B5 /* APIError.swift in Sources */,
+				1C5FA3B32B5CB62900FAABCC /* WordView.swift in Sources */,
 				06A8982A286BEECA00F773B5 /* Tokens.swift in Sources */,
-				06A89838286C0FFC00F773B5 /* TableViewDataSource.swift in Sources */,
+				1C5FA3B72B5CE36B00FAABCC /* Meta.swift in Sources */,
 				06A8982C286BF00800F773B5 /* API.swift in Sources */,
+				1C5FA3B02B5CAEDF00FAABCC /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,30 +346,12 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		06A897FF286BEBA500F773B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				06A89800286BEBA500F773B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				06A89805286BEBA600F773B5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		06A8981E286BEBA600F773B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -400,6 +384,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -428,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -460,6 +446,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -488,12 +475,11 @@
 				DEVELOPMENT_TEAM = 5R395K5VP8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PuraDictionary/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Pura Dictionary";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,12 +503,11 @@
 				DEVELOPMENT_TEAM = 5R395K5VP8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PuraDictionary/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Pura Dictionary";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
