@@ -24,6 +24,6 @@ struct WordRowItemView: View {
 
 struct WordRowItemView_Previews: PreviewProvider {
     static var previews: some View {
-        WordRowItemView(word: Word(text: "eat", definitions: ["to eat food or nutritious food", "eating substances", "the act of eating"]))
+        WordRowItemView(word: Word(text: "eating", definitions: ["to eat food", "eating food", "the act of eating"]))
     }
 }

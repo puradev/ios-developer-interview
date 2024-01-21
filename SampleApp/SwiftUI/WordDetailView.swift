@@ -31,6 +31,6 @@ struct WordDetailView: View {
 
 struct WordDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        WordDetailView(word: Word(text: "eat", definitions: ["to eat food or nutritious food", "eating substances", "the act of eating"]))
+        WordDetailView(word: Word(text: "eat", definitions: ["to eat food", "eating food", "the act of eating"]))
     }
 }

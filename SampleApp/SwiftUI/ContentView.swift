@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var isApiCallInProgress: Bool = false
     @State private var presentEmptyDefinitionAlert: Bool = false
     @State private var presentApiFailureAlert: Bool = false
+    @State private var presentInvalidInputAlert: Bool = false
     
     var body: some View {
         NavigationView {
@@ -23,7 +24,6 @@ struct ContentView: View {
                     Text("Dictionary")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
-                    
                     
                     Text("Enter a word below, and see the definition!")
                 } //: VStack
@@ -38,12 +38,17 @@ struct ContentView: View {
                     // Submit Button
                     Button("Submit") {
                         isApiCallInProgress = true
-                        print(userInput)
-                        fetchWordDefinition(with: userInput)
-                    }
+                        
+                        if isInputValid() {
+                            fetchWordDefinition(with: userInput)
+                        } else {
+                            isApiCallInProgress = false
+                            presentInvalidInputAlert = true
+                        }
+                    } //: Button
                     .buttonStyle(.borderedProminent)
                     .disabled(isApiCallInProgress)
-                }
+                } //: HStack
                 
                 // Results List
                 List {
@@ -52,7 +57,7 @@ struct ContentView: View {
                             WordRowItemView(word: word)
                         }
                     }
-                }
+                } //: List
                 
             } //: VStack
             .padding(15)
@@ -61,10 +66,21 @@ struct ContentView: View {
                     userInput = ""
                 })
             }
-            .alert("API failure, please try again", isPresented: $presentApiFailureAlert) {
+            .alert("An error occured, please try again", isPresented: $presentApiFailureAlert) {
+                Button("Ok", action: {})
+            }
+            .alert("Numbers, special characters, and spaces aren't permitted, please try again", isPresented: $presentInvalidInputAlert) {
                 Button("Ok", action: {})
             }
         }
+    }
+    
+    func isInputValid() -> Bool {
+        let validCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        if userInput.rangeOfCharacter(from: validCharacters.inverted) != nil {
+            return false
+        }
+        return true
     }
     
     func fetchWordDefinition(with word: String) {
