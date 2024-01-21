@@ -116,7 +116,7 @@ struct WordView: View {
                         .padding(.leading)
                         .fontWeight(.bold)
                     
-                    Text(word.synonymsForShortDefIndex(index: i))
+                    Text(synonymText)
                         .italic()
                         .padding(.bottom)
                         .padding(.leading)
@@ -128,7 +128,7 @@ struct WordView: View {
                         .padding(.leading)
                         .fontWeight(.bold)
                     
-                    Text(word.antonymsForShortDefIndex(index: i))
+                    Text(antonymText)
                         .italic()
                         .padding(.bottom)
                         .padding(.leading)
