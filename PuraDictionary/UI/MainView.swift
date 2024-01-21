@@ -10,7 +10,8 @@ import AlertToast
 
 struct MainView: View {
     @ObservedObject var model: MainViewModel
-    
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -45,23 +46,23 @@ struct MainView: View {
                 }
                 
                 .toast(isPresenting: $model.showInvalidWordError){
-                    AlertToast(displayMode: .hud, type: .error(.red), title: "Invalid search, try again")
+                    AlertToast(displayMode: .hud, type: .error(.red), title: "Word: " + model.searchText + " not found")
                 }
                 .toast(isPresenting: $model.showAPIError){
                     AlertToast(type: .error(.red), title: model.apiErrorText)
                 }
             }
         }
-        .tint(.black)
+        .tint(colorScheme == .light ?  .black : .white)
     }
     
     var searchBar: some View {
         HStack {
             Image(systemName: "magnifyingglass").foregroundColor(.black)
-            TextField("Search for Word", text: $model.searchText)
+            TextField("", text: $model.searchText, prompt: Text("Search for Word").foregroundColor(.gray))
+                .foregroundColor(.black)
                 .font(Font.system(size: 21))
                 .autocorrectionDisabled()
-            
         }
         .padding(7)
         .background(Color.white)

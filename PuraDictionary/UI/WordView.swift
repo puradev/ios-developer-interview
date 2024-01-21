@@ -11,38 +11,57 @@ struct WordView: View {
     var wordResponse: WordResponse
     
     @State private var mode = 0
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             Picker("", selection: $mode) {
                 Text("Dictionary").tag(0)
-                Text("Thesauras").tag(1)
+                Text("Thesaurus").tag(1)
             }
             .pickerStyle(.segmented)
+            .padding()
             
             Text(wordResponse.word.text)
                 .font(.largeTitle)
                 .padding(.leading)
             
-
+            
             Text(wordResponse.fl)
+                .font(.title2)
+                .italic()
                 .padding(.leading)
             
             Text(wordResponse.meta.stems.joined(separator: "; "))
+                .font(.caption)
                 .fontWeight(.bold)
                 .padding(.bottom)
                 .padding(.leading)
             
             Text("Definitions")
-                .font(.title2)
+                .font(.title3)
                 .padding(.leading)
             
             List(wordResponse.word.definitions, id: \.self) { def in
-                Text(def)
+                Text("- " + def)
+                    .listRowBackground(Color.clear)
+                    .padding(.top)
+                    .padding(.bottom)
+                    .listRowSeparatorTint(colorScheme == .light ? .black : .gray)
             }
+            .padding(.top, -25)
+            .listStyle(.grouped)
+            .listRowBackground(Color.clear)
+            .scrollContentBackground(.hidden)
         }
         .navigationBarTitle("", displayMode: .inline)
-
+        .background {
+            if colorScheme == .dark {
+                LinearGradient(gradient: Gradient(colors: [.black, .yellow]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
+            } else {
+                LinearGradient(gradient: Gradient(colors: [.white, .yellow]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
+            }
+        }
     }
 }
 
