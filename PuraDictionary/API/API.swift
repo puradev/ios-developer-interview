@@ -49,7 +49,6 @@ class API: NSObject {
             
 
         }.resume()
-        
     }
     
 }

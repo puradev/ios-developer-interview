@@ -18,9 +18,10 @@
 		06A89836286C071200F773B5 /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89835286C071200F773B5 /* URLBuilder.swift */; };
 		06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89839286C165A00F773B5 /* WordResponse.swift */; };
 		1C5FA3AC2B5CA78900FAABCC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5FA3AB2B5CA78900FAABCC /* Launch Screen.storyboard */; };
-		1C5FA3B02B5CAEDF00FAABCC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA3AF2B5CAEDF00FAABCC /* ViewModel.swift */; };
+		1C5FA3B02B5CAEDF00FAABCC /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA3AF2B5CAEDF00FAABCC /* MainViewModel.swift */; };
 		1C5FA3B32B5CB62900FAABCC /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA3B22B5CB62900FAABCC /* WordView.swift */; };
 		1C5FA3B72B5CE36B00FAABCC /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5FA3B62B5CE36B00FAABCC /* Meta.swift */; };
+		1C5FA3BA2B5D5CD200FAABCC /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 1C5FA3B92B5D5CD200FAABCC /* AlertToast */; };
 		1CF96F4A2B5C7E83000E6B73 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF96F492B5C7E83000E6B73 /* MainView.swift */; };
 		1CF96F882B5C8863000E6B73 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF96F872B5C8863000E6B73 /* App.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +58,7 @@
 		06A89835286C071200F773B5 /* URLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBuilder.swift; sourceTree = "<group>"; };
 		06A89839286C165A00F773B5 /* WordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordResponse.swift; sourceTree = "<group>"; };
 		1C5FA3AB2B5CA78900FAABCC /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		1C5FA3AF2B5CAEDF00FAABCC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1C5FA3AF2B5CAEDF00FAABCC /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		1C5FA3B22B5CB62900FAABCC /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		1C5FA3B62B5CE36B00FAABCC /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		1CF96F492B5C7E83000E6B73 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5FA3BA2B5D5CD200FAABCC /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				1CF96F492B5C7E83000E6B73 /* MainView.swift */,
+				1C5FA3AF2B5CAEDF00FAABCC /* MainViewModel.swift */,
 				1C5FA3B22B5CB62900FAABCC /* WordView.swift */,
-				1C5FA3AF2B5CAEDF00FAABCC /* ViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -186,6 +188,9 @@
 			dependencies = (
 			);
 			name = PuraDictionary;
+			packageProductDependencies = (
+				1C5FA3B92B5D5CD200FAABCC /* AlertToast */,
+			);
 			productName = SampleApp;
 			productReference = 06A897F6286BEBA500F773B5 /* PuraDictionary.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +263,9 @@
 				Base,
 			);
 			mainGroup = 06A897ED286BEBA500F773B5;
+			packageReferences = (
+				1C5FA3B82B5D5CD200FAABCC /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = 06A897F7286BEBA500F773B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,7 +318,7 @@
 				06A8982A286BEECA00F773B5 /* Tokens.swift in Sources */,
 				1C5FA3B72B5CE36B00FAABCC /* Meta.swift in Sources */,
 				06A8982C286BF00800F773B5 /* API.swift in Sources */,
-				1C5FA3B02B5CAEDF00FAABCC /* ViewModel.swift in Sources */,
+				1C5FA3B02B5CAEDF00FAABCC /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +645,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1C5FA3B82B5D5CD200FAABCC /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C5FA3B92B5D5CD200FAABCC /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C5FA3B82B5D5CD200FAABCC /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06A897EE286BEBA500F773B5 /* Project object */;
 }

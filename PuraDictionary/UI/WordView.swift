@@ -10,13 +10,21 @@ import SwiftUI
 struct WordView: View {
     var wordResponse: WordResponse
     
+    @State private var mode = 0
+
     var body: some View {
         VStack(alignment: .leading) {
+            Picker("", selection: $mode) {
+                Text("Dictionary").tag(0)
+                Text("Thesauras").tag(1)
+            }
+            .pickerStyle(.segmented)
+            
             Text(wordResponse.word.text)
                 .font(.largeTitle)
                 .padding(.leading)
             
-            
+
             Text(wordResponse.fl)
                 .padding(.leading)
             
@@ -26,6 +34,7 @@ struct WordView: View {
                 .padding(.leading)
             
             Text("Definitions")
+                .font(.title2)
                 .padding(.leading)
             
             List(wordResponse.word.definitions, id: \.self) { def in

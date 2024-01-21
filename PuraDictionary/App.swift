@@ -10,7 +10,7 @@ import SwiftUI
 struct PuraDictionary: App {
     var body: some Scene {
         WindowGroup {
-            MainView(model: ViewModel())
+            MainView(model: MainViewModel())
         }
     }
 }
