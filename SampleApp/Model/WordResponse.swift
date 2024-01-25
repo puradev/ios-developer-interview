@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct WordResponse: Codable {
     let meta: Meta
     let shortdef: [String]

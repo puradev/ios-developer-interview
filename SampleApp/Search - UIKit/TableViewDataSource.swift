@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class TableViewDataSource: NSObject {
     
     enum State {
@@ -40,17 +39,18 @@ extension TableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard case let State.word(word) = state  else {
             return UITableViewCell()
+        }        
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "dictionaryCell") as? DictionaryTableViewCell else {
+            return UITableViewCell()
         }
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
-        cell.selectionStyle = .none
         
         if indexPath.row == 0 {
-            cell.textLabel?.text = "word:"
-            cell.detailTextLabel?.text = word.text
+            cell.configure(cellType: .word, value: word.text)
         } else {
-            cell.textLabel?.text = "definition:"
-            cell.detailTextLabel?.text = word.definitions[indexPath.row - 1]
+            cell.configure(cellType: .definition, value: word.definitions[indexPath.row - 1])
         }
+        
         return cell
     }
 }
