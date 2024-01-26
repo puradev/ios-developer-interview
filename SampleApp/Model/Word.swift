@@ -11,6 +11,8 @@ import Foundation
 struct Word: Codable {
     var text: String
     var definitions: [String]
+    var homewordInfo: HeadwordInfo
+    var functionalLabel: String
     
     
 //    static func parseData(_ data: Data) -> Word {
