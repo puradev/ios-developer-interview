@@ -43,3 +43,28 @@ and Documentation can be found [here](https://dictionaryapi.com/products/json)
     - Giphy of the searched word
     - Konami Code
 
+# Updates
+
+## Summary of changes made
+- Made network request use async/await to use more updated asynchronous capabilities, more readable code, and better internal management of thread resources.
+- Created ViewModel to handle network request to fetch data and trigger UI changes using MVVM pattern
+- Used Combine to bind and update UI from the viewModel to the ViewController
+- Handled Error states
+    - Empty state to prompt user to search for a word
+    - Button disabled with hint t word is at least 3 characters long
+    - Invalid error message if word is incorrect
+- Improved user experience
+    - Keyboard dismissal if search button tapped, from done button on keyboard, and also on tapping outside the keyboard.
+    - Content is not hidden and clearly visible to the user
+    - Definitions are displayed as a numbered list
+    - Easy to follow instructions and hints through visibility and readability of messages and app states
+    - Beautification with gradient background
+- Added unit test for decoding JSON response
+
+## Further improvements possible
+- Add more unit tests, for example to mock network request.
+- Can be updated to SwiftUI
+- Can be made more attractive by adding assets and animations
+- Can include a loading page for slower network requests
+- Can include a landing page
+- Can include additional settings to utilize more information from the JSON, for example, show related words from the stems list, disable or provide a warning for offensive words, etc.

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct WordResponse: Codable {
     let meta: Meta
     let shortdef: [String]
@@ -18,6 +17,7 @@ struct WordResponse: Codable {
     
     static func parseData(_ data: Data) -> WordResponse? {
         do {
+            print("Data: \(String(data: data, encoding: .utf8))")
             let response = try JSONDecoder().decode([WordResponse].self, from: data)
             return response.first
         } catch {

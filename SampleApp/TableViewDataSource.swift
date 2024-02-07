@@ -17,6 +17,7 @@ class TableViewDataSource: NSObject {
     }
 
     var state: State
+    
     init(state: State) {
         self.state = state
     }
@@ -38,18 +39,20 @@ extension TableViewDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard case let State.word(word) = state  else {
+        guard case let State.word(word) = state else {
+            return UITableViewCell(style: .default, reuseIdentifier: nil)
+        }
+        
+        let wordString = "word:"
+        let definitionString = "definition \(indexPath.row):"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WordDefinitionTableViewCell.reuseID, for: indexPath) as? WordDefinitionTableViewCell else {
+            print("TableViewError: Couldn't dequeue reusable cell \(WordDefinitionTableViewCell.reuseID)")
             return UITableViewCell()
         }
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
-        cell.selectionStyle = .none
-        
         if indexPath.row == 0 {
-            cell.textLabel?.text = "word:"
-            cell.detailTextLabel?.text = word.text
+            cell.configure(title: wordString, content: word.text)
         } else {
-            cell.textLabel?.text = "definition:"
-            cell.detailTextLabel?.text = word.definitions[indexPath.row - 1]
+            cell.configure(title: definitionString, content: word.definitions[indexPath.row - 1])
         }
         return cell
     }

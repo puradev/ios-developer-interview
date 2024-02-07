@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HSM-Bg-EuJ">
-                                <rect key="frame" x="25" y="98" width="254" height="34"/>
+                                <rect key="frame" x="25" y="102" width="262.5" height="34.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQN-Df-xo4">
-                                <rect key="frame" x="320" y="98" width="69" height="34"/>
+                                <rect key="frame" x="311.5" y="102" width="77.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search"/>
                                 <connections>
@@ -30,26 +31,60 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LUm-hP-4Wq">
-                                <rect key="frame" x="25" y="159" width="364" height="703"/>
+                                <rect key="frame" x="25" y="168.5" width="364" height="693.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq8-OH-eQF">
+                                <rect key="frame" x="25" y="144.5" width="364" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tf5-Gz-Yzg">
+                                <rect key="frame" x="20" y="168.5" width="374" height="693.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcl-gF-WMz">
+                                        <rect key="frame" x="37.5" y="94" width="299" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="jcl-gF-WMz" firstAttribute="centerX" secondItem="Tf5-Gz-Yzg" secondAttribute="centerX" id="Hwh-26-PhW"/>
+                                    <constraint firstItem="jcl-gF-WMz" firstAttribute="centerY" secondItem="Tf5-Gz-Yzg" secondAttribute="centerY" multiplier="0.3" id="Q3O-cZ-brb"/>
+                                    <constraint firstItem="jcl-gF-WMz" firstAttribute="width" secondItem="Tf5-Gz-Yzg" secondAttribute="width" multiplier="0.8" id="YAb-sY-Gj6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tf5-Gz-Yzg" secondAttribute="trailing" constant="20" id="98e-x3-zpe"/>
+                            <constraint firstItem="pq8-OH-eQF" firstAttribute="leading" secondItem="HSM-Bg-EuJ" secondAttribute="leading" id="9Lc-x4-aoN"/>
+                            <constraint firstItem="Tf5-Gz-Yzg" firstAttribute="top" secondItem="HSM-Bg-EuJ" secondAttribute="bottom" constant="32" id="9ml-23-lYf"/>
                             <constraint firstItem="LUm-hP-4Wq" firstAttribute="leading" secondItem="HSM-Bg-EuJ" secondAttribute="leading" id="GzV-fw-QZA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SQN-Df-xo4" secondAttribute="trailing" constant="25" id="OrV-gQ-APN"/>
+                            <constraint firstItem="pq8-OH-eQF" firstAttribute="trailing" secondItem="SQN-Df-xo4" secondAttribute="trailing" id="P4j-Tl-s3b"/>
                             <constraint firstItem="HSM-Bg-EuJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="PBc-ZF-a76"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LUm-hP-4Wq" secondAttribute="bottom" id="S0S-8l-HMh"/>
                             <constraint firstItem="SQN-Df-xo4" firstAttribute="top" secondItem="HSM-Bg-EuJ" secondAttribute="top" id="Txz-Po-dlw"/>
                             <constraint firstItem="LUm-hP-4Wq" firstAttribute="trailing" secondItem="SQN-Df-xo4" secondAttribute="trailing" id="WJI-bR-y8L"/>
+                            <constraint firstItem="pq8-OH-eQF" firstAttribute="top" secondItem="HSM-Bg-EuJ" secondAttribute="bottom" constant="8" id="XhR-1m-dOV"/>
                             <constraint firstItem="SQN-Df-xo4" firstAttribute="bottom" secondItem="HSM-Bg-EuJ" secondAttribute="bottom" id="bZD-No-Omj"/>
-                            <constraint firstItem="SQN-Df-xo4" firstAttribute="leading" secondItem="HSM-Bg-EuJ" secondAttribute="trailing" constant="41" id="eBD-Si-TfP"/>
+                            <constraint firstItem="SQN-Df-xo4" firstAttribute="leading" secondItem="HSM-Bg-EuJ" secondAttribute="trailing" constant="24" id="eBD-Si-TfP"/>
+                            <constraint firstItem="Tf5-Gz-Yzg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gd1-Ce-xWa"/>
                             <constraint firstItem="HSM-Bg-EuJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="isP-an-mC4"/>
-                            <constraint firstItem="LUm-hP-4Wq" firstAttribute="top" secondItem="HSM-Bg-EuJ" secondAttribute="bottom" constant="27" id="mAz-8N-T6V"/>
+                            <constraint firstItem="LUm-hP-4Wq" firstAttribute="top" secondItem="HSM-Bg-EuJ" secondAttribute="bottom" constant="32" id="mAz-8N-T6V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tf5-Gz-Yzg" secondAttribute="bottom" id="nqk-CV-hda"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="overlayLabel" destination="jcl-gF-WMz" id="o7s-2P-W2t"/>
+                        <outlet property="overlayView" destination="Tf5-Gz-Yzg" id="grt-vM-kRb"/>
+                        <outlet property="requirementLabel" destination="pq8-OH-eQF" id="xrZ-MC-1hd"/>
+                        <outlet property="searchButton" destination="SQN-Df-xo4" id="o1Z-nl-95W"/>
                         <outlet property="tableView" destination="LUm-hP-4Wq" id="iI5-z0-uY9"/>
                         <outlet property="textField" destination="HSM-Bg-EuJ" id="JIr-8c-8Dm"/>
                     </connections>

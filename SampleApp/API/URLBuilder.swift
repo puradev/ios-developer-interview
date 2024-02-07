@@ -12,7 +12,7 @@ struct URLBuilder {
     var baseURL: String
     var word: String
 
-    var requestURL: String {
+    var dictRequestURL: String {
         let url = baseURL + word + "?key=" + Tokens.apiKeyDict
         return url
     }
