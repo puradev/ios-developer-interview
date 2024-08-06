@@ -15,7 +15,7 @@ public class DictionaryViewModel: ObservableObject {
     @Published var noResultsText: String?
     
     func search(for word: String, didFinish: @escaping (Bool) -> Void) {
-        API.shared.fetchWordNew(query: word)
+        API.shared.fetchWordNewUsingCombine(query: word)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {

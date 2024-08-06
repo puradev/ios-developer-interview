@@ -14,7 +14,7 @@ class API: NSObject {
     static let shared = API()
     static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
     
-    func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
+    func fetchWordOld(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
         guard !query.isEmpty else {
             completion(.failure(.emptyQuery))
             return
@@ -53,7 +53,7 @@ class API: NSObject {
         }.resume()
     }
     
-    func fetchWordNew(query: String) -> AnyPublisher<WordResponse, APIError> {
+    func fetchWordNewUsingCombine(query: String) -> AnyPublisher<WordResponse, APIError> {
         
         return Future { [weak self] promise in
             
