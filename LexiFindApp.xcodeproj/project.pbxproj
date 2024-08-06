@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		06A897FA286BEBA500F773B5 /* LexiFindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A897F9286BEBA500F773B5 /* LexiFindApp.swift */; };
-		06A897FC286BEBA500F773B5 /* AppContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A897FB286BEBA500F773B5 /* AppContainerView.swift */; };
 		06A89803286BEBA600F773B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A89802286BEBA600F773B5 /* Assets.xcassets */; };
 		06A89806286BEBA600F773B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */; };
 		06A89811286BEBA600F773B5 /* LexiFindAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89810286BEBA600F773B5 /* LexiFindAppTests.swift */; };
@@ -22,7 +21,6 @@
 		06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A89839286C165A00F773B5 /* WordResponse.swift */; };
 		06A8983C286C168800F773B5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8983B286C168800F773B5 /* Meta.swift */; };
 		9F8DF96B2C6287D700E70D87 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF96A2C6287D700E70D87 /* DictionaryView.swift */; };
-		9F8DF96D2C6287E700E70D87 /* ThesaurusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF96C2C6287E700E70D87 /* ThesaurusView.swift */; };
 		9F8DF9702C62AC9200E70D87 /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF96F2C62AC9200E70D87 /* DictionaryViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +44,6 @@
 /* Begin PBXFileReference section */
 		06A897F6286BEBA500F773B5 /* LexiFindApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LexiFindApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A897F9286BEBA500F773B5 /* LexiFindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexiFindApp.swift; sourceTree = "<group>"; };
-		06A897FB286BEBA500F773B5 /* AppContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerView.swift; sourceTree = "<group>"; };
 		06A89802286BEBA600F773B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06A89805286BEBA600F773B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06A8980C286BEBA600F773B5 /* LexiFindAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LexiFindAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +59,6 @@
 		06A89839286C165A00F773B5 /* WordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordResponse.swift; sourceTree = "<group>"; };
 		06A8983B286C168800F773B5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		9F8DF96A2C6287D700E70D87 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
-		9F8DF96C2C6287E700E70D87 /* ThesaurusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThesaurusView.swift; sourceTree = "<group>"; };
 		9F8DF96F2C62AC9200E70D87 /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				06A897F9286BEBA500F773B5 /* LexiFindApp.swift */,
-				06A897FB286BEBA500F773B5 /* AppContainerView.swift */,
 				062E352E286CC5950072B38E /* API */,
 				062E352F286CC5B10072B38E /* Model */,
 				06A89802286BEBA600F773B5 /* Assets.xcassets */,
@@ -168,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				9F8DF96A2C6287D700E70D87 /* DictionaryView.swift */,
-				9F8DF96C2C6287E700E70D87 /* ThesaurusView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,14 +306,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */,
-				9F8DF96D2C6287E700E70D87 /* ThesaurusView.swift in Sources */,
 				06A897FA286BEBA500F773B5 /* LexiFindApp.swift in Sources */,
 				9F8DF9702C62AC9200E70D87 /* DictionaryViewModel.swift in Sources */,
 				06A89836286C071200F773B5 /* URLBuilder.swift in Sources */,
 				9F8DF96B2C6287D700E70D87 /* DictionaryView.swift in Sources */,
 				06A8983C286C168800F773B5 /* Meta.swift in Sources */,
 				06A8982E286BF07B00F773B5 /* Word.swift in Sources */,
-				06A897FC286BEBA500F773B5 /* AppContainerView.swift in Sources */,
 				06A89832286BF3D200F773B5 /* APIError.swift in Sources */,
 				06A8982A286BEECA00F773B5 /* Tokens.swift in Sources */,
 				06A8982C286BF00800F773B5 /* API.swift in Sources */,
