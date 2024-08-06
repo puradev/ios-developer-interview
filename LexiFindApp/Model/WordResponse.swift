@@ -7,13 +7,19 @@
 
 import Foundation
 
-
 struct WordResponse: Codable {
+    
     let meta: Meta
     let shortdef: [String]
+    let fl: String
     
     var word: Word {
-        return Word(text: meta.stems.first!, definitions: shortdef)
+        var allRelatedWords = meta.stems
+        allRelatedWords.removeFirst()
+        var altWordVersions = allRelatedWords
+        let originalWord = meta.stems.first ?? ""
+        
+        return Word(searchedWord: originalWord, altWords: altWordVersions, definitions: shortdef, wordType: fl)
     }
     
     static func parseData(_ data: Data) -> WordResponse? {
