@@ -1,0 +1,93 @@
+# Xcode
+#
+DerivedData/
+.idea/
+*.hmap
+*.ipa
+*.xcuserstate
+
+# User-specific files
+#
+*.xcuserdatad/
+*.xcscmblueprint
+*.xcodeproj/*
+!default.xcodeproj/*
+*.xcworkspace/xcuserdata/
+
+# Build generated files
+#
+build/
+*.app
+*.app.dSYM
+*.dSYM.zip
+*.dSYM
+*.ipa
+*.llvmlog
+
+# CocoaPods
+#
+Pods/
+Podfile.lock
+
+# Carthage
+#
+Carthage/Build/
+
+# fastlane
+#
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Swift Package Manager
+#
+.build/
+Packages
+Package.pins
+Package.resolved
+*.xcodeproj/project.xcworkspace/xcuserdata/
+.checkouts/
+.swiftpm/xcode/xcuserdata/
+
+# Other
+#
+*.moved-aside
+*.xcuserstate
+*.xcuserdata
+*.scmversion
+*.gcno
+*.gcda
+*.mo
+*.state
+*.cmo
+*.glob
+*.marker
+*.cmt
+*.cmti
+*.swp
+*.a
+*.o
+*.so
+*.swiftdoc
+*.swiftsourceinfo
+*.swiftdeps
+*.d
+*.dia
+*.module
+*.pyc
+*.pyo
+*.env
+*.iml
+*.DS_Store
+*~.nib
+*~.plist
+
+# Playgrounds
+#
+timeline.xctimeline
+playground.xcworkspace
+
+# Unit test XCResult files
+#
+*.xcresult
