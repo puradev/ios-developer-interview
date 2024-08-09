@@ -7,49 +7,40 @@
 
 import Foundation
 
-class API: NSObject {
+class API {
     static let shared = API()
     let session = URLSession.shared
     
-    static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
-    
-    func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
+    static let dictUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    static let thesUrl = "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
+
+    func fetchWord(query: String, isDict: Bool) async throws -> Data {
         guard !query.isEmpty else {
-            completion(.failure(.emptyQuery))
-            return
+            throw APIError.emptyQuery
         }
         
         guard query.count > 2 else {
-            completion(.failure(.tooShort(query)))
-            return
+            throw APIError.tooShort
         }
         
-        
-        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
+        var requestURL = URLBuilder(baseURL: API.dictUrl, word: query.lowercased()).requestURLDict
+        if !isDict {
+            requestURL = URLBuilder(baseURL: API.thesUrl, word: query.lowercased()).requestURLThes
+        }
         
         guard let url = URL(string: requestURL) else {
-            completion(.failure(.badURL))
-            return
+            throw APIError.badURL
         }
         
         let request = URLRequest(url: url)
         
-        print("Fetching from: ", request.url?.absoluteString ?? "")
-        session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(.custom(error.localizedDescription)))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            completion(.success(data))
-            
-
-        }.resume()
+        print("Fetching from: ", request.url?.absoluteString ?? "")        
+        let (data, response) = try await URLSession.shared.data(for: request)
         
-    }
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw APIError.serverError
+        }
     
+        return data
+    }
 }
