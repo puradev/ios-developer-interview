@@ -1,9 +1,9 @@
-//
-//  TableViewDataSource.swift
-//  SampleApp
-//
-//  Created by natehancock on 6/28/22.
-//
+    //
+    //  TableViewDataSource.swift
+    //  SampleApp
+    //
+    //  Created by natehancock on 6/28/22.
+    //
 
 import Foundation
 import UIKit
@@ -15,7 +15,7 @@ class TableViewDataSource: NSObject {
         case empty
         case word(Word)
     }
-
+    
     var state: State
     init(state: State) {
         self.state = state
@@ -30,10 +30,12 @@ class TableViewDataSource: NSObject {
 }
 
 extension TableViewDataSource: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard case let State.word(word) = state  else {
             return 0
         }
+            // Add 1 here for top cell that contains the word that was found.
         return word.definitions.count + 1
     }
     
