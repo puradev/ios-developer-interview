@@ -41,15 +41,19 @@ extension TableViewDataSource: UITableViewDataSource {
         guard case let State.word(word) = state  else {
             return UITableViewCell()
         }
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
+
         cell.selectionStyle = .none
         
         if indexPath.row == 0 {
-            cell.textLabel?.text = "word:"
-            cell.detailTextLabel?.text = word.text
+            // first row heading
+            cell.definition?.text = "Definitions:"
+            cell.definition?.font = UIFont.boldSystemFont(ofSize: 16)
         } else {
-            cell.textLabel?.text = "definition:"
-            cell.detailTextLabel?.text = word.definitions[indexPath.row - 1]
+            // remaining rows
+            cell.definition?.text = word.definitions[indexPath.row - 1]
+            cell.definition?.font = UIFont.systemFont(ofSize: 14)
         }
         return cell
     }

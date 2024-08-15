@@ -14,6 +14,7 @@ class API: NSObject {
     static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
     
     func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
+
         guard !query.isEmpty else {
             completion(.failure(.emptyQuery))
             return
@@ -23,7 +24,6 @@ class API: NSObject {
             completion(.failure(.tooShort(query)))
             return
         }
-        
         
         let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
         
