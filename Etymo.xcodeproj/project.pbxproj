@@ -65,6 +65,7 @@
 		06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		06A89839286C165A00F773B5 /* WordResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordResponse.swift; sourceTree = "<group>"; };
 		06A8983B286C168800F773B5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		D93453102C7AF426004ABF8C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 		06A897ED286BEBA500F773B5 = {
 			isa = PBXGroup;
 			children = (
+				D93453102C7AF426004ABF8C /* README.md */,
 				06A897F8286BEBA500F773B5 /* Etymo */,
 				06A8980F286BEBA600F773B5 /* EtymoTests */,
 				06A89819286BEBA600F773B5 /* EtymoUITests */,
