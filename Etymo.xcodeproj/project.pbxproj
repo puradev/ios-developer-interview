@@ -22,6 +22,7 @@
 		D9EFB1952C7B3B61008DF3A4 /* EtymoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB1942C7B3B61008DF3A4 /* EtymoApp.swift */; };
 		D9EFB1972C7B3BA0008DF3A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB1962C7B3B9D008DF3A4 /* ContentView.swift */; };
 		D9EFB19C2C7B4F62008DF3A4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB19B2C7B4F5A008DF3A4 /* ContentViewModel.swift */; };
+		D9EFB19E2C7B57CC008DF3A4 /* ContentUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB19D2C7B57CC008DF3A4 /* ContentUnavailableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D9EFB1942C7B3B61008DF3A4 /* EtymoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtymoApp.swift; sourceTree = "<group>"; };
 		D9EFB1962C7B3B9D008DF3A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D9EFB19B2C7B4F5A008DF3A4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		D9EFB19D2C7B57CC008DF3A4 /* ContentUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				D9EFB1942C7B3B61008DF3A4 /* EtymoApp.swift */,
 				D9EFB1962C7B3B9D008DF3A4 /* ContentView.swift */,
 				D9EFB19B2C7B4F5A008DF3A4 /* ContentViewModel.swift */,
+				D9EFB19D2C7B57CC008DF3A4 /* ContentUnavailableView.swift */,
 				062E352E286CC5950072B38E /* API */,
 				062E352F286CC5B10072B38E /* Model */,
 				06A89802286BEBA600F773B5 /* Assets.xcassets */,
@@ -307,6 +310,7 @@
 				D9EFB1972C7B3BA0008DF3A4 /* ContentView.swift in Sources */,
 				06A89836286C071200F773B5 /* URLBuilder.swift in Sources */,
 				06A8983C286C168800F773B5 /* Meta.swift in Sources */,
+				D9EFB19E2C7B57CC008DF3A4 /* ContentUnavailableView.swift in Sources */,
 				D9EFB19C2C7B4F62008DF3A4 /* ContentViewModel.swift in Sources */,
 				06A8982E286BF07B00F773B5 /* Word.swift in Sources */,
 				06A89832286BF3D200F773B5 /* APIError.swift in Sources */,

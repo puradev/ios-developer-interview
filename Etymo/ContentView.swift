@@ -17,8 +17,12 @@ struct ContentView: View {
                             }
                         } else if viewModel.searchText.isEmpty {
                             emptySearchView
+                                .padding(.bottom, 48)
+                                .frame(maxHeight: .infinity, alignment: .center)
                         } else {
                             noResultsView
+                                .padding(.bottom, 48)
+                                .frame(maxHeight: .infinity, alignment: .center)
                         }
                     }
                     .frame(width: geometry.size.width)
@@ -40,67 +44,30 @@ struct ContentView: View {
     }
 
     var emptySearchView: some View {
-        VStack(spacing: 8) {
-            Image(systemName: "character.cursor.ibeam")
-                .font(.largeTitle.weight(.bold))
-                .imageScale(.large)
-                .foregroundStyle(.secondary)
-                .accessibilityHidden(true)
-
-            VStack(spacing: 4) {
-                Text("Enter a Word")
-                    .font(.headline)
-                Text("Type a word into the search to see its definitions.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-            .multilineTextAlignment(.center)
-            .accessibilityElement(children: .combine)
-        }
-        .padding(.bottom, 48)
-        .frame(maxHeight: .infinity, alignment: .center)
+        ContentUnavailableView(
+            image: Image(systemName: "text.page.badge.magnifyingglass"),
+            title: "Enter a Word",
+            description: "Type a word into the search to see its definitions."
+        )
+        .tint(.secondary)
     }
 
     var noResultsView: some View {
-        VStack(spacing: 8) {
-            Image(systemName: "text.page.badge.magnifyingglass")
-                .font(.largeTitle.weight(.bold))
-                .imageScale(.large)
-                .foregroundStyle(.secondary)
-                .accessibilityHidden(true)
-
-            VStack(spacing: 4) {
-                Text("No Results")
-                    .font(.headline)
-                Text("Check the spelling or try a new search.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-            .multilineTextAlignment(.center)
-            .accessibilityElement(children: .combine)
-        }
-        .padding(.bottom, 48)
-        .frame(maxHeight: .infinity, alignment: .center)
+        ContentUnavailableView(
+            image: Image(systemName: "text.page.badge.magnifyingglass"),
+            title: "No Results",
+            description: "Check the spelling or try a new search."
+        )
+        .tint(.secondary)
     }
 
     var notConnectedView: some View {
-        VStack(spacing: 8) {
-            Image(systemName: "wifi.slash")
-                .font(.largeTitle.weight(.bold))
-                .imageScale(.large)
-                .foregroundStyle(.red)
-                .accessibilityHidden(true)
-
-            VStack(spacing: 4) {
-                Text("Not Connected")
-                    .font(.headline)
-                Text("Unable to lookup words while offline.\nCheck your Internet connection.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-            .multilineTextAlignment(.center)
-            .accessibilityElement(children: .combine)
-        }
+        ContentUnavailableView(
+            image: Image(systemName: "wifi.slash"),
+            title: "Not Connected",
+            description: "Unable to lookup words while offline.\nCheck your Internet connection."
+        )
+        .tint(.red)
     }
 }
 
