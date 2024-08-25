@@ -1,20 +1,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var searchText = ""
-    @State private var word: Word?
+    @StateObject private var viewModel = ContentViewModel()
 
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
                 ScrollView {
                     VStack {
-                        if let word {
+                        if let word = viewModel.word {
                             Text("\(word.text)")
                             ForEach(Array(word.definitions.enumerated()), id: \.offset) { index, definition in
                                 Text("\(index + 1). \(definition)")
                             }
-                        } else if searchText.isEmpty {
+                        } else if viewModel.searchText.isEmpty {
                             emptySearchView
                         } else {
                             noResultsView
@@ -25,22 +24,7 @@ struct ContentView: View {
                 }
 
                 .navigationTitle("Etymo")
-                .searchable(text: $searchText, prompt: "Word")
-                .onChange(of: searchText) { text in
-                    API.shared.fetchWord(query: text) { response in
-                        switch response {
-                        case .success(let data):
-                            guard let r = WordResponse.parseData(data) else {
-                                return
-                            }
-
-                            word = r.word
-                        case .failure(let error):
-                            word = nil
-                            print("NETWORK ERROR: ", error.localizedDescription)
-                        }
-                    }
-                }
+                .searchable(text: $viewModel.searchText, prompt: "Word")
             }
         }
     }
