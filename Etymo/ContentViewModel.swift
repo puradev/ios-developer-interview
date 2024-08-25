@@ -4,6 +4,7 @@ import SwiftUI
 class ContentViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var word: Word?
+    @Published var isLoading = false
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -18,6 +19,8 @@ class ContentViewModel: ObservableObject {
     }
 
     private func fetchWord(query: String) {
+        isLoading = true
+
         API.shared.fetchWord(query: query) { response in
             switch response {
             case .success(let data):
@@ -25,9 +28,15 @@ class ContentViewModel: ObservableObject {
                     return
                 }
 
-                self.word = r.word
+                DispatchQueue.main.async {
+                    self.word = r.word
+                    self.isLoading = false
+                }
             case .failure(let error):
-                self.word = nil
+                DispatchQueue.main.async {
+                    self.word = nil
+                    self.isLoading = false
+                }
                 print("NETWORK ERROR: ", error.localizedDescription)
             }
         }

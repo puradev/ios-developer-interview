@@ -8,7 +8,9 @@ struct ContentView: View {
             GeometryReader { geometry in
                 ScrollView {
                     VStack {
-                        if let word = viewModel.word {
+                        if viewModel.isLoading {
+                            ProgressView()
+                        } else if let word = viewModel.word {
                             Text("\(word.text)")
                             ForEach(Array(word.definitions.enumerated()), id: \.offset) { index, definition in
                                 Text("\(index + 1). \(definition)")
