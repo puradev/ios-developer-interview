@@ -24,6 +24,7 @@
 		D9EFB19C2C7B4F62008DF3A4 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB19B2C7B4F5A008DF3A4 /* ContentViewModel.swift */; };
 		D9EFB19E2C7B57CC008DF3A4 /* ContentUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB19D2C7B57CC008DF3A4 /* ContentUnavailableView.swift */; };
 		D9EFB1A02C7B59BA008DF3A4 /* WordItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EFB19F2C7B59B8008DF3A4 /* WordItemView.swift */; };
+		D9EFB1A42C7B9FE5008DF3A4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D9EFB1A32C7B9FE5008DF3A4 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		D9EFB19B2C7B4F5A008DF3A4 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		D9EFB19D2C7B57CC008DF3A4 /* ContentUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUnavailableView.swift; sourceTree = "<group>"; };
 		D9EFB19F2C7B59B8008DF3A4 /* WordItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordItemView.swift; sourceTree = "<group>"; };
+		D9EFB1A32C7B9FE5008DF3A4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				06A89802286BEBA600F773B5 /* Assets.xcassets */,
 				06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */,
 				06A89807286BEBA600F773B5 /* Info.plist */,
+				D9EFB1A32C7B9FE5008DF3A4 /* Localizable.xcstrings */,
 			);
 			path = Etymo;
 			sourceTree = "<group>";
@@ -265,6 +268,11 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
+				de,
+				it,
+				ja,
 			);
 			mainGroup = 06A897ED286BEBA500F773B5;
 			productRefGroup = 06A897F7286BEBA500F773B5 /* Products */;
@@ -285,6 +293,7 @@
 			files = (
 				06A89806286BEBA600F773B5 /* LaunchScreen.storyboard in Resources */,
 				06A89803286BEBA600F773B5 /* Assets.xcassets in Resources */,
+				D9EFB1A42C7B9FE5008DF3A4 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +433,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -477,6 +487,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
