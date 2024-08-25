@@ -28,7 +28,7 @@ struct ContentUnavailableView: View {
 
 #Preview {
     ContentUnavailableView(
-        image: Image(systemName: "wifi.slash"),
+        image: Image(.wifiSlash),
         title: "Not Connected",
         description: "Unable to lookup words while offline.\nCheck your Internet connection."
     )

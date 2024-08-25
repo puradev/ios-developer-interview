@@ -27,7 +27,6 @@ struct ContentView: View {
                     .frame(width: geometry.size.width)
                     .frame(minHeight: geometry.size.height)
                 }
-
                 .navigationTitle("Etymo")
                 .searchable(text: $viewModel.searchText, prompt: "Word")
             }
@@ -44,7 +43,7 @@ struct ContentView: View {
 
     var emptySearchView: some View {
         ContentUnavailableView(
-            image: Image(systemName: "text.page.badge.magnifyingglass"),
+            image: Image(.textPageBadgeMagnifyingglass),
             title: "Enter a Word",
             description: "Type a word into the search to see its definitions."
         )
@@ -53,7 +52,7 @@ struct ContentView: View {
 
     var noResultsView: some View {
         ContentUnavailableView(
-            image: Image(systemName: "text.page.badge.magnifyingglass"),
+            image: Image(.textPageBadgeMagnifyingglass),
             title: "No Results",
             description: "Check the spelling or try a new search."
         )
@@ -62,7 +61,7 @@ struct ContentView: View {
 
     var notConnectedView: some View {
         ContentUnavailableView(
-            image: Image(systemName: "wifi.slash"),
+            image: Image(.wifiSlash),
             title: "Not Connected",
             description: "Unable to lookup words while offline.\nCheck your Internet connection."
         )

@@ -6,6 +6,20 @@ Explore words like never before with definitions, origins, usage, and more in on
 
 Open `Etymo.xcodeproj` and build/run the project.
 
+### Images
+
+Convert all icons to [symbols](https://developer.apple.com/documentation/uikit/uiimage/creating_custom_symbol_images_for_your_app) and store them in `Assets.xcassets/Symbols`. Export symbols from [SF Symbols](https://developer.apple.com/sf-symbols/) or use [SF Symbol Creator](https://www.figma.com/community/plugin/1207724751253683840) to export custom icons from Figma.
+
+Use compiled assets instead of string named images:
+
+```
+// Incorrect
+Image("star")
+
+// Correct
+Image(.star)
+```
+
 ### Device Support
 
 Support is provided for the most current version and the previous version of iOS and iPadOS, as well as for earlier versions until their usage falls below 10%. For the latest statistics, see [iOS and iPadOS Usage](https://developer.apple.com/support/app-store/).
