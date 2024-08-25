@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  SampleApp
+//  Etymo
 //
 //  Created by natehancock on 6/28/22.
 //

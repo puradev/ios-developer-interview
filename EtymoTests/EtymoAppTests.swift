@@ -1,14 +1,14 @@
 //
-//  SampleAppTests.swift
-//  SampleAppTests
+//  EtymoTests.swift
+//  EtymoTests
 //
 //  Created by natehancock on 6/28/22.
 //
 
 import XCTest
-@testable import SampleApp
+@testable import Etymo
 
-class SampleAppTests: XCTestCase {
+class EtymoAppTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
