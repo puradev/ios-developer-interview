@@ -29,8 +29,16 @@ struct ContentView: View {
                 .searchable(text: $viewModel.searchText, prompt: "Word")
             }
         }
+        .overlay {
+            if !viewModel.isConnected {
+                notConnectedView
+                    .padding()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(.background)
+            }
+        }
     }
-    
+
     var emptySearchView: some View {
         VStack(spacing: 8) {
             Image(systemName: "character.cursor.ibeam")
@@ -46,6 +54,7 @@ struct ContentView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
+            .multilineTextAlignment(.center)
             .accessibilityElement(children: .combine)
         }
         .padding(.bottom, 48)
@@ -67,10 +76,31 @@ struct ContentView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
+            .multilineTextAlignment(.center)
             .accessibilityElement(children: .combine)
         }
         .padding(.bottom, 48)
         .frame(maxHeight: .infinity, alignment: .center)
+    }
+
+    var notConnectedView: some View {
+        VStack(spacing: 8) {
+            Image(systemName: "wifi.slash")
+                .font(.largeTitle.weight(.bold))
+                .imageScale(.large)
+                .foregroundStyle(.red)
+                .accessibilityHidden(true)
+
+            VStack(spacing: 4) {
+                Text("Not Connected")
+                    .font(.headline)
+                Text("Unable to lookup words while offline.\nCheck your Internet connection.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            .multilineTextAlignment(.center)
+            .accessibilityElement(children: .combine)
+        }
     }
 }
 

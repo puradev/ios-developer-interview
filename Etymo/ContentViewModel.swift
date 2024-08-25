@@ -1,11 +1,15 @@
 import Combine
+import Network
 import SwiftUI
 
 class ContentViewModel: ObservableObject {
     @Published var searchText = ""
     @Published var word: Word?
     @Published var isLoading = false
+    @Published var isConnected = true
 
+    private let networkMonitor = NWPathMonitor()
+    private let queue = DispatchQueue(label: "NetworkMonitor")
     private var cancellables = Set<AnyCancellable>()
 
     init() {
@@ -16,6 +20,13 @@ class ContentViewModel: ObservableObject {
                 self?.fetchWord(query: searchText)
             }
             .store(in: &cancellables)
+
+        networkMonitor.pathUpdateHandler = { path in
+            DispatchQueue.main.async {
+                self.isConnected = path.status == .satisfied
+            }
+        }
+        networkMonitor.start(queue: queue)
     }
 
     private func fetchWord(query: String) {
