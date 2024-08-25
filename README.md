@@ -10,7 +10,7 @@ Open `Etymo.xcodeproj` and build/run the project.
 
 Update `TestFlight/WhatToTest.en-US.txt` with any instructions for testers.
 
-Push to the `interview-submission` branch and the project will auto-deploy to TestFlight using Xcode Cloud.
+Push to the `interview-submission` branch and the project will auto-deploy to [TestFlight](https://testflight.apple.com/join/9t9cTXZ2) using Xcode Cloud.
 
 To release the app, use [App Store Connect](https://appstoreconnect.apple.com) to create a new version and submit it for Apple Review.
 
