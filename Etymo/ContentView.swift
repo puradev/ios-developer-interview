@@ -14,6 +14,8 @@ struct ContentView: View {
                             ForEach(Array(word.definitions.enumerated()), id: \.offset) { index, definition in
                                 Text("\(index + 1). \(definition)")
                             }
+                        } else if searchText.isEmpty {
+                            emptySearchView
                         } else {
                             noResultsView
                         }
@@ -21,7 +23,7 @@ struct ContentView: View {
                     .frame(width: geometry.size.width)
                     .frame(minHeight: geometry.size.height)
                 }
-                
+
                 .navigationTitle("Etymo")
                 .searchable(text: $searchText, prompt: "Word")
                 .onChange(of: searchText) { text in
@@ -31,7 +33,7 @@ struct ContentView: View {
                             guard let r = WordResponse.parseData(data) else {
                                 return
                             }
-                            
+
                             word = r.word
                         case .failure(let error):
                             word = nil
@@ -43,6 +45,27 @@ struct ContentView: View {
         }
     }
     
+    var emptySearchView: some View {
+        VStack(spacing: 8) {
+            Image(systemName: "character.cursor.ibeam")
+                .font(.largeTitle.weight(.bold))
+                .imageScale(.large)
+                .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
+
+            VStack(spacing: 4) {
+                Text("Enter a Word")
+                    .font(.headline)
+                Text("Type a word into the search to see its definitions.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            .accessibilityElement(children: .combine)
+        }
+        .padding(.bottom, 48)
+        .frame(maxHeight: .infinity, alignment: .center)
+    }
+
     var noResultsView: some View {
         VStack(spacing: 8) {
             Image(systemName: "text.page.badge.magnifyingglass")
@@ -50,7 +73,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.secondary)
                 .accessibilityHidden(true)
-            
+
             VStack(spacing: 4) {
                 Text("No Results")
                     .font(.headline)
