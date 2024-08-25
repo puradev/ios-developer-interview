@@ -11,10 +11,9 @@ struct ContentView: View {
                         if viewModel.isLoading {
                             ProgressView()
                         } else if let word = viewModel.word {
-                            Text("\(word.text)")
-                            ForEach(Array(word.definitions.enumerated()), id: \.offset) { index, definition in
-                                Text("\(index + 1). \(definition)")
-                            }
+                            WordItemView(word: word)
+                                .frame(maxWidth: .infinity)
+                                .padding()
                         } else if viewModel.searchText.isEmpty {
                             emptySearchView
                                 .padding(.bottom, 48)
