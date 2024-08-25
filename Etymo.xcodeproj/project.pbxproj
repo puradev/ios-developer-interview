@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -68,6 +68,10 @@
 		D93453102C7AF426004ABF8C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D9EFB1902C7B0ACD008DF3A4 /* TestFlight */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TestFlight; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		06A897F3286BEBA500F773B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D93453102C7AF426004ABF8C /* README.md */,
+				D9EFB1902C7B0ACD008DF3A4 /* TestFlight */,
 				06A897F8286BEBA500F773B5 /* Etymo */,
 				06A8980F286BEBA600F773B5 /* EtymoTests */,
 				06A89819286BEBA600F773B5 /* EtymoUITests */,
