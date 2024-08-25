@@ -6,6 +6,10 @@ Explore words like never before with definitions, origins, usage, and more in on
 
 Open `Etymo.xcodeproj` and build/run the project.
 
+### Device Support
+
+Support is provided for the most current version and the previous version of iOS and iPadOS, as well as for earlier versions until their usage falls below 10%. For the latest statistics, see [iOS and iPadOS Usage](https://developer.apple.com/support/app-store/).
+
 ## Deployment
 
 Update `TestFlight/WhatToTest.en-US.txt` with any instructions for testers.
