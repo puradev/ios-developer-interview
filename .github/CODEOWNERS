@@ -1,0 +1,2 @@
+*.tf @puradev/site-reliability-engineers
+**/terraform/** @puradev/site-reliability-engineers
