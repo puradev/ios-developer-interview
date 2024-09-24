@@ -1,45 +1,40 @@
-#  Hello
+# Etymo
 
-Welcome to the Pura Interview Process. Thank you for taking the time and we look forward to talking with you more.
+Explore words like never before with definitions, origins, usage, and more in one powerful app.
 
-### Task
-We would like you to take this sample app and improve it in some way. The project is open ended but feel free to follow any #suggestions
+## Development
 
-Please take 2-4 hours to plan and make your improvements. Please fork this into your own public repository, make your changes, and submit a PR in your repo with your changes. (this prevents other candidates from easily viewing your changes) Then share the repository for review. 
+Open `Etymo.xcodeproj` and build/run the project.
 
-### Purpose of Task
-We want to see how you interact with an existing codebase.
+### Images
 
-A few things we will consider:
-- Code Style, Quality, and Understandability
-- Does it work?
+Convert all icons to [symbols](https://developer.apple.com/documentation/uikit/uiimage/creating_custom_symbol_images_for_your_app) and store them in `Assets.xcassets/Symbols`. Export symbols from [SF Symbols](https://developer.apple.com/sf-symbols/) or use [SF Symbol Creator](https://www.figma.com/community/plugin/1207724751253683840) to export custom icons from Figma.
 
+Use compiled assets instead of string named images:
 
-Be prepared to talk about which improvements you made and why you made them in the next interview.
+```
+// Incorrect
+Image("star")
 
-Feel free to reach out with any questions. nateh@pura.com
+// Correct
+Image(.star)
+```
 
+### Device Support
 
-### App
-This is a simple app where you can type in a word and get definitions for that word
+Support is provided for the most current version and the previous version of iOS and iPadOS, as well as for earlier versions until their usage falls below 10%. For the latest statistics, see [iOS and iPadOS Usage](https://developer.apple.com/support/app-store/).
 
-### API
+## Deployment
 
-We are using a public api provided by Merriam Webster.
+Update `TestFlight/WhatToTest.en-US.txt` with any instructions for testers.
 
-The Dictionary API is found [here](https://dictionaryapi.com/products/api-collegiate-dictionary)
+Push to the `interview-submission` branch and the project will auto-deploy to [TestFlight](https://testflight.apple.com/join/9t9cTXZ2) using Xcode Cloud.
 
-and Documentation can be found [here](https://dictionaryapi.com/products/json)
+To release the app, use [App Store Connect](https://appstoreconnect.apple.com) to create a new version and submit it for Apple Review.
 
-### Suggestions
-- Improve the user experience
-- Add Views and experience For Thesaurus. `Tokens.apiKeyThes`
-- Unit Tests or UI Tests
-- view for empty state
-- Error handling and display Errors to user
-- Refactor to SwiftUI
-- Refactor to Combine
-- Add an easter egg or something to make us laugh
-    - Giphy of the searched word
-    - Konami Code
+## Resources
 
+- 🖥️ [Etymo Website](https://etymo.app)
+- 🎨 [Figma Designs](https://www.figma.com/design/Edqid3ps1vdztSLTrzo5Fq/Etymo?node-id=0-1&t=Vs8GlF9mtC4CZoUX-1)
+- 📖 [Merriam Webster Dictionary API](https://dictionaryapi.com/products/api-collegiate-dictionary)
+- 📖 [Merriam Webster Documentation](https://dictionaryapi.com/products/json)
