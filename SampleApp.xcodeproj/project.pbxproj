@@ -145,8 +145,7 @@
 			children = (
 				06A897F9286BEBA500F773B5 /* AppDelegate.swift */,
 				06A897FB286BEBA500F773B5 /* SceneDelegate.swift */,
-				712B7B542CA5FCC500155F85 /* RootView.swift */,
-				712B7B572CA5FDB800155F85 /* WordDetailView.swift */,
+				712B7B592CA6043B00155F85 /* Views */,
 				062E352E286CC5950072B38E /* API */,
 				062E352F286CC5B10072B38E /* Model */,
 				712B7B562CA5FD2F00155F85 /* Old UIKit */,
@@ -182,6 +181,15 @@
 				06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */,
 			);
 			path = "Old UIKit";
+			sourceTree = "<group>";
+		};
+		712B7B592CA6043B00155F85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				712B7B542CA5FCC500155F85 /* RootView.swift */,
+				712B7B572CA5FDB800155F85 /* WordDetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
