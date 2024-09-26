@@ -20,18 +20,16 @@ class ViewController: UIViewController {
             return
         }
         
-        API.shared.fetchWord(query: text) { response in
-            switch response {
-            case .success(let data):
+        Task {
+            do {
+                let data = try await API.shared.fetchWord(query: text)
                 guard let r = WordResponse.parseData(data) else {
                     return
                 }
-                
                 self.dataSource.updateState(.word(r.word)) {
                     self.tableView.reloadData()
                 }
-                
-            case .failure(let error):
+            } catch {
                 self.dataSource.updateState(.empty) {
                     self.tableView.reloadData()
                 }

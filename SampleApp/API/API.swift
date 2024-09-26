@@ -13,43 +13,31 @@ class API: NSObject {
     
     static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
     
-    func fetchWord(query: String, _ completion: @escaping (Result<Data, APIError>) -> Void) {
+    func fetchWord(query: String) async throws -> Data {
         guard !query.isEmpty else {
-            completion(.failure(.emptyQuery))
-            return
+            throw APIError.emptyQuery
         }
         
         guard query.count > 2 else {
-            completion(.failure(.tooShort(query)))
-            return
+            throw APIError.tooShort(query)
         }
         
         
         let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
         
         guard let url = URL(string: requestURL) else {
-            completion(.failure(.badURL))
-            return
+            throw APIError.badURL
         }
         
         let request = URLRequest(url: url)
         
         print("Fetching from: ", request.url?.absoluteString ?? "")
-        session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(.custom(error.localizedDescription)))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            completion(.success(data))
-            
-
-        }.resume()
-        
+        do {
+            let (data, _) = try await session.data(for: request)
+            return data
+        } catch {
+            throw APIError.custom(String(describing: error))
+        }
     }
     
 }
