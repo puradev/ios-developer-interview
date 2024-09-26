@@ -11,15 +11,14 @@ import SwiftData
 @Model
 class WordEntry: Identifiable {
     private var wordResponse: WordResponse
-    var word: String
+    @Attribute(.unique) var word: String
     var definitions: [String] { wordResponse.shortdef }
     var lastUpdated: Date
-    var id: UUID
+    var id: String { word }
     
-    init(word: String, wordResponse: WordResponse, context: ModelContext?, id: UUID = .init()) {
+    init(word: String, wordResponse: WordResponse, context: ModelContext?) {
         self.word = word
         self.wordResponse = wordResponse
-        self.id = id
         lastUpdated = .now
         context?.insert(self)
         try? context?.save()

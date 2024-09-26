@@ -9,15 +9,16 @@ import SwiftUI
 import SwiftData
 
 struct SearchHistoryView: View {
-    @Query(sort: [.init(\WordEntry.lastUpdated)]) var entries: [WordEntry]
+    @Query(sort: [.init(\WordEntry.lastUpdated, order: .reverse)]) var entries: [WordEntry]
     @Environment(\.modelContext) private var modelContext: ModelContext
+    @Environment(\.dismissSearch) private var dismissSearch
 
     var viewModel: RootViewModel
     
     var body: some View {
-        List {
             ForEach(entries) { entry in
                 Button(entry.word) {
+                    dismissSearch()
                     viewModel.search(entry)
                 }
             }
@@ -28,6 +29,5 @@ struct SearchHistoryView: View {
                     try? modelContext.save()
                 }
             }
-        }
     }
 }
