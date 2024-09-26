@@ -13,7 +13,7 @@ class API: NSObject {
     
     static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
     
-    func fetchWord(query: String) async throws -> Data {
+    func fetchWord(query: String) async throws -> WordResponse {
         guard !query.isEmpty else {
             throw APIError.emptyQuery
         }
@@ -34,7 +34,15 @@ class API: NSObject {
         print("Fetching from: ", request.url?.absoluteString ?? "")
         do {
             let (data, _) = try await session.data(for: request)
-            return data
+            do {
+                guard let response = try WordResponse.parseData(data).first else {
+                    throw APIError.noData
+                }
+                return response
+            } catch {
+                print("WORD RESPONSE ERROR: ", error)
+                throw APIError.custom(String(describing: error))
+            }
         } catch {
             throw APIError.custom(String(describing: error))
         }

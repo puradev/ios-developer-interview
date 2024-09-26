@@ -22,11 +22,8 @@ class ViewController: UIViewController {
         
         Task {
             do {
-                let data = try await API.shared.fetchWord(query: text)
-                guard let r = WordResponse.parseData(data) else {
-                    return
-                }
-                self.dataSource.updateState(.word(r.word)) {
+                let response = try await API.shared.fetchWord(query: text)
+                self.dataSource.updateState(.word(response.word)) {
                     self.tableView.reloadData()
                 }
             } catch {
