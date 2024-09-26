@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,8 @@
 		06A8983C286C168800F773B5 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A8983B286C168800F773B5 /* Meta.swift */; };
 		712B7B552CA5FCC500155F85 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B542CA5FCC500155F85 /* RootView.swift */; };
 		712B7B582CA5FDB800155F85 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B572CA5FDB800155F85 /* WordDetailView.swift */; };
-		712B7B602CA6082000155F85 /* SampleApp_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B5F2CA6082000155F85 /* SampleApp_app.swift */; };
+		712B7B602CA6082000155F85 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B5F2CA6082000155F85 /* AppView.swift */; };
+		712B7B622CA6088000155F85 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B612CA6088000155F85 /* SearchHistoryView.swift */; };
 		71F358402CA493E2002F2F84 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 71F3583F2CA493E2002F2F84 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -59,9 +60,14 @@
 		06A8983B286C168800F773B5 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
 		712B7B542CA5FCC500155F85 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		712B7B572CA5FDB800155F85 /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
-		712B7B5F2CA6082000155F85 /* SampleApp_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApp_app.swift; sourceTree = "<group>"; };
+		712B7B5F2CA6082000155F85 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		712B7B612CA6088000155F85 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
 		71F3583F2CA493E2002F2F84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		712B7B662CA608B100155F85 /* Swift Data */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Swift Data"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		06A897F3286BEBA500F773B5 /* Frameworks */ = {
@@ -102,6 +108,7 @@
 		062E352F286CC5B10072B38E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				712B7B662CA608B100155F85 /* Swift Data */,
 				06A8982D286BF07B00F773B5 /* Word.swift */,
 				06A89839286C165A00F773B5 /* WordResponse.swift */,
 				06A8983B286C168800F773B5 /* Meta.swift */,
@@ -162,8 +169,9 @@
 		712B7B592CA6043B00155F85 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				712B7B5F2CA6082000155F85 /* AppView.swift */,
 				712B7B542CA5FCC500155F85 /* RootView.swift */,
-				712B7B5F2CA6082000155F85 /* SampleApp_app.swift */,
+				712B7B612CA6088000155F85 /* SearchHistoryView.swift */,
 				712B7B572CA5FDB800155F85 /* WordDetailView.swift */,
 			);
 			path = Views;
@@ -183,6 +191,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				712B7B662CA608B100155F85 /* Swift Data */,
 			);
 			name = SampleApp;
 			productName = SampleApp;
@@ -306,8 +317,9 @@
 				712B7B582CA5FDB800155F85 /* WordDetailView.swift in Sources */,
 				06A89832286BF3D200F773B5 /* APIError.swift in Sources */,
 				712B7B552CA5FCC500155F85 /* RootView.swift in Sources */,
-				712B7B602CA6082000155F85 /* SampleApp_app.swift in Sources */,
+				712B7B602CA6082000155F85 /* AppView.swift in Sources */,
 				06A8982A286BEECA00F773B5 /* Tokens.swift in Sources */,
+				712B7B622CA6088000155F85 /* SearchHistoryView.swift in Sources */,
 				06A8982C286BF00800F773B5 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
