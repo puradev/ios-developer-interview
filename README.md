@@ -1,7 +1,7 @@
 #  Ben Patch Code Challenge
 ## Goals/Ideas
 
-1. Make API use Async Await
+1. ✅ Make API use Async Await
 2. Replace root view with SwiftUI
 3. Implement UI
     - Search bar that opens ResultView
