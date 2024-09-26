@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct WordDetailView: View {
-    let response: WordResponse
+    let entry: WordEntry
     
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                Text("WORD: " + response.word.text)
-                ForEach(response.shortdef, id: \.self) { definition in
+                Text("WORD: " + entry.word)
+                ForEach(entry.definitions, id: \.self) { definition in
                     Text("DEFINITION: " + definition)
                 }
             }

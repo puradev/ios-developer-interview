@@ -10,9 +10,9 @@ import SwiftUI
 @Observable
 class RootViewModel {
     var searchString: String = ""
-    var searchResult: WordResponse?
+    var currentEntry: WordEntry?
     var isLoading = false
-    var currentTask: Task<Void, Never>?
+    private var currentTask: Task<Void, Never>?
     private var api: API
     
     init(api: API = API.shared) { // injectable
@@ -20,16 +20,26 @@ class RootViewModel {
     }
     
     @MainActor
-    func search() {
-        isLoading = true
-        currentTask = nil
+    func search(_ wordEntry: WordEntry? = nil) {
         currentTask?.cancel()
+        currentTask = nil
+        isLoading = false
         
+        if let wordEntry {
+            searchString = wordEntry.word
+            currentEntry = wordEntry
+        } else {
+            makeSearchAPICall()
+        }
+    }
+    
+    private func makeSearchAPICall() {
+        isLoading = true
         currentTask = Task {
             do {
                 let searchResult = try await api.fetchWord(query: searchString)
                 guard !Task.isCancelled else { return } // don't update isLoading
-                self.searchResult = searchResult
+                self.currentEntry = .init(wordResponse: searchResult) // should save automatically
                 isLoading = false
             } catch {
                 isLoading = false
@@ -44,8 +54,8 @@ struct RootView: View {
     
     var body: some View {
         NavigationStack {
-            if let searchResult = viewModel.searchResult {
-                WordDetailView(response: searchResult)
+            if let entry = viewModel.currentEntry {
+                WordDetailView(entry: entry)
             } else if viewModel.isLoading {
                 ProgressView()
                     .progressViewStyle(.circular)

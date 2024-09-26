@@ -13,10 +13,12 @@ class WordEntry: Identifiable {
     private var wordResponse: WordResponse
     var word: String { wordResponse.word.text }
     var definitions: [String] { wordResponse.shortdef }
+    var lastUpdated: Date
     var id: UUID
     
     init(wordResponse: WordResponse, id: UUID = .init()) {
         self.wordResponse = wordResponse
         self.id = id
+        lastUpdated = .now
     }
 }
