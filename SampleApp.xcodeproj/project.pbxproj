@@ -144,11 +144,9 @@
 				06A897F9286BEBA500F773B5 /* AppDelegate.swift */,
 				06A897FB286BEBA500F773B5 /* SceneDelegate.swift */,
 				712B7B542CA5FCC500155F85 /* RootView.swift */,
-				06A897FD286BEBA500F773B5 /* ViewController.swift */,
-				06A897FF286BEBA500F773B5 /* Main.storyboard */,
-				06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */,
 				062E352E286CC5950072B38E /* API */,
 				062E352F286CC5B10072B38E /* Model */,
+				712B7B562CA5FD2F00155F85 /* Old UIKit */,
 				06A89802286BEBA600F773B5 /* Assets.xcassets */,
 				06A89804286BEBA600F773B5 /* LaunchScreen.storyboard */,
 				06A89807286BEBA600F773B5 /* Info.plist */,
@@ -171,6 +169,16 @@
 				06A8981C286BEBA600F773B5 /* SampleAppUITestsLaunchTests.swift */,
 			);
 			path = SampleAppUITests;
+			sourceTree = "<group>";
+		};
+		712B7B562CA5FD2F00155F85 /* Old UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				06A897FD286BEBA500F773B5 /* ViewController.swift */,
+				06A897FF286BEBA500F773B5 /* Main.storyboard */,
+				06A89837286C0FFC00F773B5 /* TableViewDataSource.swift */,
+			);
+			path = "Old UIKit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
