@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @Observable
 class RootViewModel {
@@ -14,6 +15,7 @@ class RootViewModel {
     var isLoading = false
     private var currentTask: Task<Void, Never>?
     private var api: API
+    var context: ModelContext?
     
     init(api: API = API.shared) { // injectable
         self.api = api
@@ -39,7 +41,8 @@ class RootViewModel {
             do {
                 let searchResult = try await api.fetchWord(query: searchString)
                 guard !Task.isCancelled else { return } // don't update isLoading
-                self.currentEntry = .init(wordResponse: searchResult) // should save automatically
+                self.currentEntry = .init(word: searchString, wordResponse: searchResult, context: context) // should save automatically
+                
                 isLoading = false
             } catch {
                 isLoading = false
@@ -50,6 +53,7 @@ class RootViewModel {
 }
 
 struct RootView: View {
+    @Environment(\.modelContext) private var modelContext: ModelContext
     @State var viewModel = RootViewModel()
     
     var body: some View {
@@ -61,13 +65,15 @@ struct RootView: View {
                     .progressViewStyle(.circular)
                     .font(.largeTitle)
             } else {
-                // TODO: history view
-                EmptyView()
+                SearchHistoryView(viewModel: viewModel)
             }
         }
         .searchable(text: $viewModel.searchString, prompt: "Define <genius>")
         .onSubmit(of: .search) {
             viewModel.search()
+        }
+        .onAppear {
+            viewModel.context = modelContext
         }
     }
 }

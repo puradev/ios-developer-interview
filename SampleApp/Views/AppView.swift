@@ -16,7 +16,9 @@ struct AppView: App {
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            let model = try ModelContainer(for: schema, configurations: [modelConfiguration])
+            model.mainContext.autosaveEnabled = true
+            return model
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
