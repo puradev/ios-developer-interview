@@ -8,11 +8,11 @@
         - ✅ API.fetchWord
         - ✅ `WordResponse`
         - ✅ ResultView(WordResponse)
-    - History below search bar
-        - PersistantStore (err SwiftData version)
-        - WordResponse -> @Model `SearchHistory`
-        - @Query SearchHistory
-        - ResultView(WordResponse) -> ResultView(SearchHistory)
+    - ✅ History below search bar
+        - ✅ PersistantStore (err SwiftData version)
+        - ✅ WordResponse -> @Model `SearchHistory`
+        - ✅ @Query SearchHistory
+        - ✅ ResultView(WordResponse) -> ResultView(SearchHistory)
     - ResultView saves and allows text input for "reasoning"
         - SearchHistory.personalNote
         - Text Input UI
