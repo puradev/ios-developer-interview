@@ -37,7 +37,5 @@ struct WordDetailView: View {
 }
 
 #Preview {
-    NavigationStack {
-        WordDetailView(entry: .Previews.happy, navigationStack: .constant([]))
-    }
+    RootView(viewModel: .init(navigationStack: [.detailView(.Previews.happy)]))
 }

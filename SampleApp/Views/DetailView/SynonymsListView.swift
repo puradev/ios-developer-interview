@@ -30,7 +30,7 @@ struct SynonymsListView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button("Next") {
-                    navigationStack.append(.detailViewSynonyms(entry))
+                    navigationStack.append(.detailViewNote(entry))
                 }
             }
         }
@@ -38,7 +38,5 @@ struct SynonymsListView: View {
 }
 
 #Preview {
-    NavigationStack {
-        SynonymsListView(navigationStack: .constant([]), entry: .Previews.happy)
-    }
+    RootView(viewModel: .init(navigationStack: [.detailView(.Previews.happy), .detailViewSynonyms(.Previews.happy)]))
 }

@@ -191,8 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				712B7B572CA5FDB800155F85 /* WordDetailView.swift */,
-				712B7B6B2CA70D1F00155F85 /* WordNoteEntryView.swift */,
 				712B7B702CA7570800155F85 /* SynonymsListView.swift */,
+				712B7B6B2CA70D1F00155F85 /* WordNoteEntryView.swift */,
 			);
 			path = DetailView;
 			sourceTree = "<group>";

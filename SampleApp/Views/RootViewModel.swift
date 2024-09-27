@@ -25,8 +25,9 @@ class RootViewModel {
     private var api: API
     var context: ModelContext?
     
-    init(api: API = API.shared) { // injectable
+    init(navigationStack: [Destination] = [], api: API = API.shared) {
         self.api = api
+        self.navigationStack = navigationStack
     }
     
     @MainActor
