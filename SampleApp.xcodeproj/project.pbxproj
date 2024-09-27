@@ -24,6 +24,7 @@
 		712B7B622CA6088000155F85 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B612CA6088000155F85 /* SearchHistoryView.swift */; };
 		712B7B6A2CA700D400155F85 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B692CA700D400155F85 /* RootViewModel.swift */; };
 		712B7B6C2CA70D1F00155F85 /* WordNoteEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B6B2CA70D1F00155F85 /* WordNoteEntryView.swift */; };
+		712B7B6F2CA741A100155F85 /* SynonymsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B6E2CA741A100155F85 /* SynonymsResponse.swift */; };
 		71F358402CA493E2002F2F84 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 71F3583F2CA493E2002F2F84 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		712B7B612CA6088000155F85 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
 		712B7B692CA700D400155F85 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		712B7B6B2CA70D1F00155F85 /* WordNoteEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNoteEntryView.swift; sourceTree = "<group>"; };
+		712B7B6E2CA741A100155F85 /* SynonymsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymsResponse.swift; sourceTree = "<group>"; };
 		71F3583F2CA493E2002F2F84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				712B7B662CA608B100155F85 /* Swift Data */,
 				06A8982D286BF07B00F773B5 /* Word.swift */,
 				06A89839286C165A00F773B5 /* WordResponse.swift */,
+				712B7B6E2CA741A100155F85 /* SynonymsResponse.swift */,
 				06A8983B286C168800F773B5 /* Meta.swift */,
 			);
 			path = Model;
@@ -330,6 +333,7 @@
 				712B7B6C2CA70D1F00155F85 /* WordNoteEntryView.swift in Sources */,
 				06A8983C286C168800F773B5 /* Meta.swift in Sources */,
 				06A8982E286BF07B00F773B5 /* Word.swift in Sources */,
+				712B7B6F2CA741A100155F85 /* SynonymsResponse.swift in Sources */,
 				712B7B582CA5FDB800155F85 /* WordDetailView.swift in Sources */,
 				06A89832286BF3D200F773B5 /* APIError.swift in Sources */,
 				712B7B552CA5FCC500155F85 /* RootView.swift in Sources */,

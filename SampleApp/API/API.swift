@@ -11,9 +11,10 @@ class API: NSObject {
     static let shared = API()
     let session = URLSession.shared
     
-    static let baseUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    static let baseDefinitionUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
+    static let baseThesaurusUrl = "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
     
-    func fetchWord(query: String) async throws -> WordResponse {
+    func fetchWord(query: String) async throws -> (definition: WordResponse, synonyms: SynonymsResponse) {
         guard !query.isEmpty else {
             throw APIError.emptyQuery
         }
@@ -22,25 +23,37 @@ class API: NSObject {
             throw APIError.tooShort(query)
         }
         
+        let definition = try await fetchWordDefinition(query)
+        let synonyms = try await fetchWordSynonyms(query)
+        return (definition, synonyms)
+    }
+    
+    func fetchWordSynonyms(_ query: String) async throws -> SynonymsResponse {
+        let requestURL = URLBuilder(baseURL: API.baseThesaurusUrl, word: query.lowercased(), auth: Tokens.apiKeyThes).requestURL
+        return try await fetchFirst(at: requestURL)
         
-        let requestURL = URLBuilder(baseURL: API.baseUrl, word: query.lowercased()).requestURL
-        
+    }
+    
+    private func fetchWordDefinition(_ query: String) async throws -> WordResponse {
+        let requestURL = URLBuilder(baseURL: API.baseDefinitionUrl, word: query.lowercased(), auth: Tokens.apiKeyDict).requestURL
+        return try await fetchFirst(at: requestURL)
+    }
+    
+    private func fetchFirst<T: Codable>(at requestURL: String) async throws -> T {
         guard let url = URL(string: requestURL) else {
             throw APIError.badURL
         }
-        
-        let request = URLRequest(url: url)
-        
-        print("Fetching from: ", request.url?.absoluteString ?? "")
+        print("Fetching from: ", url.absoluteString)
         do {
-            let (data, _) = try await session.data(for: request)
+            let (data, _) = try await session.data(from: url)
             do {
-                guard let response = try WordResponse.parseData(data).first else {
+                let values = try JSONDecoder().decode([T].self, from: data)
+                guard let value = values.first else {
                     throw APIError.noData
                 }
-                return response
+                return value
             } catch {
-                print("WORD RESPONSE ERROR: ", error)
+                print("🔥 DECODING ERROR: ", error)
                 throw APIError.custom(String(describing: error))
             }
         } catch {

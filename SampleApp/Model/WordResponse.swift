@@ -16,8 +16,8 @@ struct WordResponse: Codable {
         return Word(text: meta.stems.first!, definitions: shortdef)
     }
     
-    static func parseData(_ data: Data) throws -> [WordResponse] {
-        let response = try JSONDecoder().decode([WordResponse].self, from: data)
-        return response
+
+    static var fake: Self {
+        .init(meta: .init(id: "Happy", uuid: "123", sort: "", stems: [""], offensive: false), shortdef: ["favored by luck or fortune : fortunate", "notably fitting, effective, or well adapted : felicitous", "enjoying or characterized by well-being and contentment"])
     }
 }

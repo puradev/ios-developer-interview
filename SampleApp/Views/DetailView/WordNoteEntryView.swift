@@ -50,6 +50,6 @@ struct WordNoteEntryView: View {
 
 #Preview {
     NavigationStack {
-        WordNoteEntryView(entry: .init(word: "Happiness", wordResponse: .init(meta: .init(id: "Hapineess", uuid: "123", sort: "", stems: [""], offensive: false), shortdef: ["Happiness is a complex and multifaceted emotion that encompasses a range of positive feelings, from contentment to intense joy. It is often associated with positive life experiences, such as achieving goals, spending time with loved ones, or engaging in enjoyable activities. However, happiness can also arise spontaneously, without any apparent external cause."]), context: nil), navigationStack: .constant([]))
+        WordNoteEntryView(entry: .init(word: "Happiness", definition: .fake, synonyms: .fake, context: nil), navigationStack: .constant([]))
     }
 }
