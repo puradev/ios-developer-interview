@@ -14,18 +14,20 @@ struct WordDetailView: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            VStack {
-                Text("WORD: " + entry.word)
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Definition")
+                    .font(.title)
                 ForEach(entry.definitions, id: \.self) { definition in
-                    Text("DEFINITION: " + definition)
+                    Text("- " + definition)
                 }
             }
+            .padding(.horizontal)
             .navigationTitle(entry.word)
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Next") {
-                        navigationStack.append(.detailViewNote(entry))
+                        navigationStack.append(.detailViewSynonyms(entry))
                     }
                 }
             }
@@ -35,5 +37,7 @@ struct WordDetailView: View {
 }
 
 #Preview {
-    WordDetailView(entry: .Previews.happy, navigationStack: .constant([]))
+    NavigationStack {
+        WordDetailView(entry: .Previews.happy, navigationStack: .constant([]))
+    }
 }

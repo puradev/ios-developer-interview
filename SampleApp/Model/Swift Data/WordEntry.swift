@@ -14,8 +14,8 @@ class WordEntry: Identifiable {
     private var synonymsResponse: SynonymsResponse
     @Attribute(.unique) var word: String
     var definitions: [String] { wordResponse.shortdef }
-    var synonyms: [String] { synonymsResponse.synonyms.flatMap({ $0 }) }
-    var antonyms: [String] { synonymsResponse.antonyms.flatMap({ $0 }) }
+    var synonyms: [[String]] { synonymsResponse.synonyms }
+    var antonyms: [[String]] { synonymsResponse.antonyms }
     var personalNote: String
     var lastUpdated: Date
     var id: String { word }
