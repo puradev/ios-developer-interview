@@ -15,10 +15,10 @@
         - ✅ ResultView(WordResponse) -> ResultView(SearchHistory)
     - ResultView saves and allows text input for "reasoning"
         - ✅ NavigationStack pushes ResultView 
-        - SearchHistory.personalNote
-        - Text Input UI
-        - Save button/functionality
-        - Cancel button/functionality
+        - ✅ SearchHistory.personalNote
+        - ✅ Text Input UI
+        - ✅ Save button/functionality
+        - ✅ Cancel button/functionality
     - ResultView shows synnonyms of word
         - WordResponse.synonyms
         - SearchHistory.synonyms
