@@ -22,20 +22,20 @@ class API: NSObject {
         guard query.count > 2 else {
             throw APIError.tooShort(query)
         }
-        
+        let query = query.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         let definition = try await fetchWordDefinition(query)
         let synonyms = try await fetchWordSynonyms(query)
         return (definition, synonyms)
     }
     
     func fetchWordSynonyms(_ query: String) async throws -> SynonymsResponse {
-        let requestURL = URLBuilder(baseURL: API.baseThesaurusUrl, word: query.lowercased(), auth: Tokens.apiKeyThes).requestURL
+        let requestURL = URLBuilder(baseURL: API.baseThesaurusUrl, word: query, auth: Tokens.apiKeyThes).requestURL
         return try await fetchFirst(at: requestURL)
         
     }
     
     private func fetchWordDefinition(_ query: String) async throws -> WordResponse {
-        let requestURL = URLBuilder(baseURL: API.baseDefinitionUrl, word: query.lowercased(), auth: Tokens.apiKeyDict).requestURL
+        let requestURL = URLBuilder(baseURL: API.baseDefinitionUrl, word: query, auth: Tokens.apiKeyDict).requestURL
         return try await fetchFirst(at: requestURL)
     }
     
