@@ -22,6 +22,7 @@
 		712B7B582CA5FDB800155F85 /* WordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B572CA5FDB800155F85 /* WordDetailView.swift */; };
 		712B7B602CA6082000155F85 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B5F2CA6082000155F85 /* AppView.swift */; };
 		712B7B622CA6088000155F85 /* SearchHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B612CA6088000155F85 /* SearchHistoryView.swift */; };
+		712B7B6A2CA700D400155F85 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B692CA700D400155F85 /* RootViewModel.swift */; };
 		71F358402CA493E2002F2F84 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 71F3583F2CA493E2002F2F84 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		712B7B572CA5FDB800155F85 /* WordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailView.swift; sourceTree = "<group>"; };
 		712B7B5F2CA6082000155F85 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		712B7B612CA6088000155F85 /* SearchHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryView.swift; sourceTree = "<group>"; };
+		712B7B692CA700D400155F85 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		71F3583F2CA493E2002F2F84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 			children = (
 				712B7B5F2CA6082000155F85 /* AppView.swift */,
 				712B7B542CA5FCC500155F85 /* RootView.swift */,
+				712B7B692CA700D400155F85 /* RootViewModel.swift */,
 				712B7B612CA6088000155F85 /* SearchHistoryView.swift */,
 				712B7B572CA5FDB800155F85 /* WordDetailView.swift */,
 			);
@@ -312,6 +315,7 @@
 			files = (
 				06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */,
 				06A89836286C071200F773B5 /* URLBuilder.swift in Sources */,
+				712B7B6A2CA700D400155F85 /* RootViewModel.swift in Sources */,
 				06A8983C286C168800F773B5 /* Meta.swift in Sources */,
 				06A8982E286BF07B00F773B5 /* Word.swift in Sources */,
 				712B7B582CA5FDB800155F85 /* WordDetailView.swift in Sources */,

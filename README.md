@@ -14,6 +14,7 @@
         - ✅ @Query SearchHistory
         - ✅ ResultView(WordResponse) -> ResultView(SearchHistory)
     - ResultView saves and allows text input for "reasoning"
+        - ✅ NavigationStack pushes ResultView 
         - SearchHistory.personalNote
         - Text Input UI
         - Save button/functionality
@@ -47,3 +48,9 @@ ResultView (Definition, Synonyms, Images, Personal Note)
     - `SearchHistory.definition`
     - `SearchHistory.synonyms`
     - SwiftData `.save()`
+
+
+BUGS:
+- search bar disappears if you select one of the history items when the keyboard is up
+    - Fix this by implementing a custom search bar at the top of the View and get rid of the horrible .searchable api.
+
