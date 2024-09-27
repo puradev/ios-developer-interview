@@ -19,10 +19,10 @@
         - ✅ Text Input UI
         - ✅ Save button/functionality
         - ✅ Cancel button/functionality
-    - ResultView shows synnonyms of word
-        - WordResponse.synonyms
-        - SearchHistory.synonyms
-        - Synonyms UI (add to scrollable list) 
+    - ✅ ResultView shows synnonyms of word
+        - ✅ WordResponse.synonyms
+        - ✅ WordResponse.antonyms
+        - ✅ Synonyms & Antonyms UI
     - ResultView shows Image of word
         - Gliffyx.getImages(String)
         - GliffyxResult
