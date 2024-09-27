@@ -13,6 +13,7 @@ class WordEntry: Identifiable {
     private var wordResponse: WordResponse
     @Attribute(.unique) var word: String
     var definitions: [String] { wordResponse.shortdef }
+    var personalNote: String
     var lastUpdated: Date
     var id: String { word }
     
@@ -20,6 +21,7 @@ class WordEntry: Identifiable {
         self.word = word
         self.wordResponse = wordResponse
         lastUpdated = .now
+        personalNote = ""
         context?.insert(self)
         try? context?.save()
     }
