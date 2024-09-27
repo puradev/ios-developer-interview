@@ -50,6 +50,6 @@ struct WordNoteEntryView: View {
 
 #Preview {
     NavigationStack {
-        WordNoteEntryView(entry: .init(word: "Happiness", definition: .fake, synonyms: .fake, context: nil), navigationStack: .constant([]))
+        WordNoteEntryView(entry: .Previews.happy, navigationStack: .constant([]))
     }
 }

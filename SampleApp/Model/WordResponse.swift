@@ -15,9 +15,12 @@ struct WordResponse: Codable {
     var word: Word {
         return Word(text: meta.stems.first!, definitions: shortdef)
     }
-    
+}
 
-    static var fake: Self {
-        .init(meta: .init(id: "Happy", uuid: "123", sort: "", stems: [""], offensive: false), shortdef: ["favored by luck or fortune : fortunate", "notably fitting, effective, or well adapted : felicitous", "enjoying or characterized by well-being and contentment"])
+extension WordResponse {
+    enum Previews {
+        static var happy: WordResponse {
+            .init(meta: .init(id: "Happy", uuid: "123", sort: "", stems: [""], offensive: false), shortdef: ["favored by luck or fortune : fortunate", "notably fitting, effective, or well adapted : felicitous", "enjoying or characterized by well-being and contentment"])
+        }
     }
 }

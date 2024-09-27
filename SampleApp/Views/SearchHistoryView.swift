@@ -31,3 +31,7 @@ struct SearchHistoryView: View {
             }
     }
 }
+
+#Preview {
+    SearchHistoryView(viewModel: .init())
+}

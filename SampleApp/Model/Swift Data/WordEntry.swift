@@ -29,4 +29,13 @@ class WordEntry: Identifiable {
         context?.insert(self)
         try? context?.save()
     }
+    
+}
+
+extension WordEntry {
+    enum Previews {
+        static var happy: WordEntry {
+            .init(word: "Happy", definition: .Previews.happy, synonyms: .Previews.happy, context: nil)
+        }
+    }
 }

@@ -33,3 +33,7 @@ struct WordDetailView: View {
         .scrollBounceBehavior(.basedOnSize)
     }
 }
+
+#Preview {
+    WordDetailView(entry: .Previews.happy, navigationStack: .constant([]))
+}
