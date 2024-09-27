@@ -11,9 +11,6 @@ class API: NSObject {
     static let shared = API()
     let session = URLSession.shared
     
-    static let baseDefinitionUrl = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
-    static let baseThesaurusUrl = "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/"
-    
     func fetchWord(query: String) async throws -> (definition: WordResponse, synonyms: SynonymsResponse) {
         guard !query.isEmpty else {
             throw APIError.emptyQuery
@@ -29,20 +26,18 @@ class API: NSObject {
     }
     
     func fetchWordSynonyms(_ query: String) async throws -> SynonymsResponse {
-        let requestURL = URLBuilder(baseURL: API.baseThesaurusUrl, word: query, auth: Tokens.apiKeyThes).requestURL
+        let requestURL = URL(string: "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/\(query)?key=\(Tokens.apiKeyThes)")!
         return try await fetchFirst(at: requestURL)
         
     }
     
     private func fetchWordDefinition(_ query: String) async throws -> WordResponse {
-        let requestURL = URLBuilder(baseURL: API.baseDefinitionUrl, word: query, auth: Tokens.apiKeyDict).requestURL
+        let requestURL = URL(string: "https://www.dictionaryapi.com/api/v3/references/collegiate/json/\(query)?key=\(Tokens.apiKeyDict)")!
+
         return try await fetchFirst(at: requestURL)
     }
     
-    private func fetchFirst<T: Codable>(at requestURL: String) async throws -> T {
-        guard let url = URL(string: requestURL) else {
-            throw APIError.badURL
-        }
+    private func fetchFirst<T: Codable>(at url: URL) async throws -> T {
         print("Fetching from: ", url.absoluteString)
         do {
             let (data, _) = try await session.data(from: url)
