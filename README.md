@@ -23,14 +23,15 @@
         - ✅ WordResponse.synonyms
         - ✅ WordResponse.antonyms
         - ✅ Synonyms & Antonyms UI
-    - ResultView shows Image of word
-        - Gliffyx.getImages(String)
-        - GliffyxResult
-        - AsyncImage
-        - Update ResultView with Image (in scrollable list)
-        - SearchHistory.imageURL
+    - ✅ ResultView shows Image of word
+        - ✅ Gliffyx.getImages(String)
+        - ✅ GliffyxResult
+        - ✅ AsyncImage
+        - ✅ Update ResultView with Image (in scrollable list)
+        - ✅ SearchHistory.imageURLs
         - Stretch goal:
-            - Allow cycling between image results and save selected image to SearchHistory.imageURL (or save all of them)
+            - Allow deletion of images that don't make sense
+            - Find a better API cause these images suuuck
     - Update ResultView to be fancy
         - Convert Scrollable list to 3 separate states
         - Add fancy button that allows you to drag between states
