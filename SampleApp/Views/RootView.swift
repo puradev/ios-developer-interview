@@ -10,8 +10,9 @@ import SwiftData
 
 enum Destination: Hashable {
     case detailView(WordEntry)
-    case detailViewNote(WordEntry)
+    case detailViewImages(WordEntry)
     case detailViewSynonyms(WordEntry)
+    case detailViewNote(WordEntry)
 }
 
 struct RootView: View {
@@ -35,10 +36,12 @@ struct RootView: View {
                 switch destination {
                 case .detailView(let wordEntry):
                     WordDetailView(entry: wordEntry, navigationStack: $viewModel.navigationStack)
-                case .detailViewNote(let wordEntry):
-                    WordNoteEntryView(entry: wordEntry, navigationStack: $viewModel.navigationStack)
+                case .detailViewImages(let wordEntry):
+                    WordImagesView(navigationStack: $viewModel.navigationStack, entry: wordEntry)
                 case .detailViewSynonyms(let wordEntry):
                     SynonymsListView(navigationStack: $viewModel.navigationStack, entry: wordEntry)
+                case .detailViewNote(let wordEntry):
+                    WordNoteEntryView(entry: wordEntry, navigationStack: $viewModel.navigationStack)
                 }
             })
         }

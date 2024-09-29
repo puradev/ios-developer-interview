@@ -49,5 +49,10 @@ struct WordNoteEntryView: View {
 }
 
 #Preview {
-    RootView(viewModel: .init(navigationStack: [.detailView(.Previews.happy), .detailViewSynonyms(.Previews.happy), .detailViewNote(.Previews.happy)]))
+    RootView(viewModel: .init(navigationStack: [
+        .detailView(.Previews.happy),
+        .detailViewImages(.Previews.happy),
+        .detailViewSynonyms(.Previews.happy),
+        .detailViewNote(.Previews.happy)
+    ]))
 }

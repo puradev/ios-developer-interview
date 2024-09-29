@@ -27,7 +27,7 @@ struct WordDetailView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Next") {
-                        navigationStack.append(.detailViewSynonyms(entry))
+                        navigationStack.append(.detailViewImages(entry))
                     }
                 }
             }

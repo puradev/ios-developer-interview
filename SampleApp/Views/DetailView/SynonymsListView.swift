@@ -38,5 +38,9 @@ struct SynonymsListView: View {
 }
 
 #Preview {
-    RootView(viewModel: .init(navigationStack: [.detailView(.Previews.happy), .detailViewSynonyms(.Previews.happy)]))
+    RootView(viewModel: .init(navigationStack: [
+        .detailView(.Previews.happy),
+        .detailViewImages(.Previews.happy),
+        .detailViewSynonyms(.Previews.happy)
+    ]))
 }
