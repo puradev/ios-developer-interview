@@ -25,6 +25,7 @@
 		712B7B6C2CA70D1F00155F85 /* WordNoteEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B6B2CA70D1F00155F85 /* WordNoteEntryView.swift */; };
 		712B7B6F2CA741A100155F85 /* SynonymsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B6E2CA741A100155F85 /* SynonymsResponse.swift */; };
 		712B7B712CA7570800155F85 /* SynonymsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B702CA7570800155F85 /* SynonymsListView.swift */; };
+		712B7B732CA7608700155F85 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B7B722CA7608700155F85 /* ImageResponse.swift */; };
 		71F358402CA493E2002F2F84 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 71F3583F2CA493E2002F2F84 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		712B7B6B2CA70D1F00155F85 /* WordNoteEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordNoteEntryView.swift; sourceTree = "<group>"; };
 		712B7B6E2CA741A100155F85 /* SynonymsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymsResponse.swift; sourceTree = "<group>"; };
 		712B7B702CA7570800155F85 /* SynonymsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynonymsListView.swift; sourceTree = "<group>"; };
+		712B7B722CA7608700155F85 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
 		71F3583F2CA493E2002F2F84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			children = (
 				712B7B662CA608B100155F85 /* Swift Data */,
 				06A8982D286BF07B00F773B5 /* Word.swift */,
+				712B7B722CA7608700155F85 /* ImageResponse.swift */,
 				06A89839286C165A00F773B5 /* WordResponse.swift */,
 				712B7B6E2CA741A100155F85 /* SynonymsResponse.swift */,
 				06A8983B286C168800F773B5 /* Meta.swift */,
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712B7B732CA7608700155F85 /* ImageResponse.swift in Sources */,
 				06A8983A286C165A00F773B5 /* WordResponse.swift in Sources */,
 				712B7B6A2CA700D400155F85 /* RootViewModel.swift in Sources */,
 				712B7B6C2CA70D1F00155F85 /* WordNoteEntryView.swift in Sources */,

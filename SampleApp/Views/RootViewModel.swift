@@ -49,9 +49,9 @@ class RootViewModel {
         isLoading = true
         currentTask = Task {
             do {
-                let response = try await api.fetchWord(query: searchString)
+                let (definition, synonyms, imageUrls) = try await api.fetchWord(query: searchString)
                 guard !Task.isCancelled else { return } // don't update isLoading
-                let entry = WordEntry(word: searchString, definition: response.definition, synonyms: response.synonyms, context: context)
+                let entry = WordEntry(word: searchString, definition: definition, synonyms: synonyms, imageUrls: imageUrls, context: context)
                 self.currentEntry = entry
                 navigationStack = [.detailView(entry)]
                 isLoading = false
