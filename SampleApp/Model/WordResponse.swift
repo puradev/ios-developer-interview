@@ -15,14 +15,12 @@ struct WordResponse: Codable {
     var word: Word {
         return Word(text: meta.stems.first!, definitions: shortdef)
     }
-    
-    static func parseData(_ data: Data) -> WordResponse? {
-        do {
-            let response = try JSONDecoder().decode([WordResponse].self, from: data)
-            return response.first
-        } catch {
-            print("WORD RESPONSE ERROR: ", error.localizedDescription)
+}
+
+extension WordResponse {
+    enum Previews {
+        static var happy: WordResponse {
+            .init(meta: .init(id: "Happy", uuid: "123", sort: "", stems: [""], offensive: false), shortdef: ["favored by luck or fortune : fortunate", "notably fitting, effective, or well adapted : felicitous", "enjoying or characterized by well-being and contentment"])
         }
-        return nil
     }
 }
